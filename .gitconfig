@@ -1,0 +1,12 @@
+[user]
+	name = Drew Stokes
+	email = drew@drewstokes.com
+[color]
+	branch = auto
+	status = auto
+	interactive = auto
+	ui = always
+[core]
+	editor = vim
+[github]
+  user = dstokes
