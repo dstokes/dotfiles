@@ -8,5 +8,6 @@
 	ui = always
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
 [github]
-  user = dstokes
+	user = dstokes
