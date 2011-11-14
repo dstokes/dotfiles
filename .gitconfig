@@ -13,3 +13,4 @@
 	user = dstokes
 [alias]
 	c = commit -m
+	ca = commit -a -m
