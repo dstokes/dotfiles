@@ -1,16 +1,40 @@
 [user]
 	name = Drew Stokes
 	email = drew@drewstokes.com
+
 [color]
 	branch = auto
 	status = auto
 	interactive = auto
 	ui = always
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+  whitespace = tab-in-indent,tabwidth=2
+  pager = "less -FXRS -x2"
+
 [github]
 	user = dstokes
+
 [alias]
-	c = commit -m
+  s = status
+	c = commit
 	ca = commit -a -m
+  co = checkout
+	p = !git pull && git su
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  si = submodule init
+  su = submodule update --recursive
+	sui = submodule update --init --recursive
