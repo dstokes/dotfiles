@@ -1,12 +1,12 @@
 [user]
-	name = Drew Stokes
-	email = drew@drewstokes.com
+  name = Drew Stokes
+  email = drew@drewstokes.com
 
 [color]
-	branch = auto
-	status = auto
-	interactive = auto
-	ui = always
+  branch = auto
+  status = auto
+  interactive = auto
+  ui = always
 
 [color "diff"]
   meta = yellow bold
@@ -20,21 +20,37 @@
   untracked = cyan
 
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore
+  editor = vim
+  excludesfile = ~/.gitignore
   whitespace = tab-in-indent,tabwidth=2
   pager = "less -FXRS -x2"
 
 [github]
-	user = dstokes
+  user = dstokes
 
 [alias]
+  a = add
+  c = commit
+  d = diff -w
+  l = log
+  p = !git pull && git su
   s = status
-	c = commit
-	ca = commit -a -m
+
+  br = branch
+  ca = commit -a
+  cm = commit -m
   co = checkout
-	p = !git pull && git su
-  lol = log --pretty=oneline --abbrev-commit --graph --decorate
-  si = submodule init
+  cp = cherry-pick
+  lp = log -p
+  po = push origin HEAD 
+  pw = push web HEAD
+
+  cam = commit -am
+
   su = submodule update --recursive
-	sui = submodule update --init --recursive
+  sui = submodule update --init --recursive
+  lol = !git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  stale = remote prune origin --dry-run
+
+  # git close [branchname] :: deletes the branch locally and on origin
+  close = !sh -c 'git br -d $1 && git push origin :$1' -

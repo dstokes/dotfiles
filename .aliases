@@ -1,0 +1,5 @@
+alias ls="ls -G"
+alias la="ls -alsG"
+alias tmux="TERM=xterm-256color tmux"
+alias sites='cd ~/Sites' 
+alias ios='open -a /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/'
