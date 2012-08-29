@@ -1,3 +1,6 @@
+alias ..="cd .."
+alias ...="cd ../.."
+
 alias g="git"
 alias ls="ls -G"
 alias la="ls -alsG"
