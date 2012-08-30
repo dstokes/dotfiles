@@ -1,5 +1,6 @@
 alias ..="cd .."
 alias ...="cd ../.."
+alias -- -="cd -"
 
 alias g="git"
 alias ls="ls -G"
@@ -7,3 +8,7 @@ alias la="ls -alsG"
 alias tmux="TERM=xterm-256color tmux"
 alias sites='cd ~/Sites' 
 alias ios='open -a /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/'
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""

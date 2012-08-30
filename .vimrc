@@ -25,8 +25,12 @@ set numberwidth=5
 set autoindent
 set smartindent
 
-set listchars=tab:>-
+set listchars=tab:▸\ 
 set list
+
+" Whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
 " Autocomplete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
