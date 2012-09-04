@@ -1,0 +1,16 @@
+{ "asi":true
+, "browser":true
+, "nonstandard":true
+, "smarttabs":true
+, "laxbreak":true
+, "laxcomma":true
+, "onecase":true
+, "sub":true
+, "eqeqeq":false
+, "eqnull":true
+, "evil":true
+, "predef":[
+      "$"
+    , "mint"
+  ]
+}
