@@ -16,7 +16,7 @@ set autoindent smartindent
 set nowrap
 set ignorecase
 set laststatus=2
-set title
+set statusline=%F%=%l/%L,%c\ %P\ 
 
 " Centralize backups & swap files
 set directory=~/.vim/swp
