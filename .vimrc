@@ -30,6 +30,12 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * redraw!
 
+filetype plugin on
+set ofu=syntaxcomplete#Complete
+set completeopt=longest,menuone
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
 " Toggle search highlighting
 nmap ; :set invhlsearch<CR>
 
