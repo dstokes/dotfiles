@@ -6,3 +6,4 @@ node_modules
 .vim/bundle/*
 .vim/swp/*
 .vim/undo/*
+.vimrc.local
