@@ -1,10 +1,13 @@
 " General settings
 set encoding=utf-8
 set wildignore+=*/node_modules/*
+set autoread
+set nobackup
 
 " Alignment
 set autoindent
 set smartindent
+set nowrap
 
 " Line Numering
 set number
@@ -32,6 +35,10 @@ set incsearch
 set t_Co=256
 set mouse=a
 set scrolloff=3
+set wildmenu                   " show all auto-complete file name options
+set wildmode=list:longest      " emulate shell auto-completion
+set backspace=indent,eol,start " Allow backspace in insert mode
+set hidden                     " Persist buffer changes without write
 
 " Omnicomplete
 set ofu=syntaxcomplete#Complete
