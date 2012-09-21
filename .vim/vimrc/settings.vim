@@ -3,6 +3,8 @@ set encoding=utf-8
 set wildignore+=*/node_modules/*
 set autoread
 set nobackup
+set visualbell
+set noerrorbells
 
 " Alignment
 set autoindent

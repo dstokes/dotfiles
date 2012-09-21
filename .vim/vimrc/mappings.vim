@@ -1,25 +1,34 @@
-" Mappings
+" mappings
 let mapleader = ','
-" Yank from the cursor to the end of the line, to be consistent with C and D.
+
+" faster vim commands
+nnoremap ; :
+
+" make yank work like C & D
 nnoremap Y y$
 
-" Toggle search highlighting
-nmap ; :set invhlsearch<CR> 
+" toggle search highlighting
+nmap <silent> ,/ :set invhlsearch<CR>
 
-" Change indent continuously
+" continuous indent in visual mode
 vmap < <gv
 vmap > >gv
 
-" Window navigation
-map <leader><Left> h
-map <leader><Right> l
-map <leader><Up> k
-map <leader><Down> j
+" easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
-" Plugins
+" scroll through buffers
+:nnoremap <C-n> :bnext<CR>
+:nnoremap <C-p> :bprevious<CR>
+
+" plugins
 map <leader>n :NERDTreeToggle<CR>
 nmap <C-t> :CommandT<CR>
+vmap <leader>c :TComment<CR>
 
-" Taglist
+" taglist config
 let tlist_php_settings = 'php;c:class;f:function'
 let Tlist_Use_Right_Window = 1
