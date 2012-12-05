@@ -9,7 +9,7 @@ set backupdir=~/.vim/backup
 
 " show hidden files in NerdTree
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.DS_Store$']
+let NERDTreeIgnore = ['\.DS_Store$', 'node_modules$', '\.git$']
 
 " autocomplete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
