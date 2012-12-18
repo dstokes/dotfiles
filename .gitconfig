@@ -34,7 +34,7 @@
   d = diff -w
   l = log
   p = !git pull && git su
-  s = status
+  s = status -sb
 
   br = branch
   ca = commit -a
@@ -42,7 +42,7 @@
   co = checkout
   cp = cherry-pick
   lp = log -p
-  po = push origin HEAD 
+  po = push origin HEAD
   pw = push web HEAD
 
   cam = commit -am
