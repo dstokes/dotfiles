@@ -54,3 +54,6 @@
 
   # git close [branchname] :: deletes the branch locally and on origin
   close = !sh -c 'git br -d $1 && git push origin :$1' -
+
+[web]
+  browser = open
