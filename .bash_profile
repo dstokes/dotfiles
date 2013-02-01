@@ -22,7 +22,7 @@ muxwin() {
   if [ -n "$TMUX" ]; then
     if [ "$PWD" != "$LPWD" ]; then LPWD="$PWD"; fi
     if [ -d .git ]; then
-        tmux rename-window ${PWD//*\//};
+      tmux rename-window ${PWD//*\//};
     else
       tmux set-window-option -q automatic-rename on
     fi
