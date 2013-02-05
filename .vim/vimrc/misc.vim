@@ -15,6 +15,9 @@ let NERDTreeIgnore = ['\.DS_Store$', 'node_modules$', '\.git$']
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
+" coffee-script folding
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+
 " highlight end-of-line whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/

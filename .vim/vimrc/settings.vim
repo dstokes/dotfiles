@@ -5,7 +5,6 @@ set autoread
 set nobackup
 set visualbell
 set noerrorbells
-set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i " load profile for cmds
 
 " Alignment
 set autoindent
