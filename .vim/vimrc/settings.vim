@@ -43,6 +43,11 @@ set wildmode=list:longest      " emulate shell auto-completion
 set backspace=indent,eol,start " Allow backspace in insert mode
 set hidden                     " Persist buffer changes without write
 
+" Folding
+set foldmethod=syntax
+set nofoldenable
+set foldlevel=20
+
 " Omnicomplete
 set ofu=syntaxcomplete#Complete
 set completeopt=longest,menuone
