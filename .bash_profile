@@ -19,13 +19,11 @@ fi
 # Set the name of the current tmux window to the current
 # directory if in a git repo, otherwise restore the automatic-rename option
 muxwin() {
-  if [ -n "$TMUX" ]; then
-    if [ "$PWD" != "$LPWD" ]; then LPWD="$PWD"; fi
-    if [ -d .git ]; then
-      tmux rename-window ${PWD//*\//};
-    else
-      tmux set-window-option -q automatic-rename on
-    fi
+  repo=$(git rev-parse --show-toplevel 2> /dev/null)
+  if [[ -n "$TMUX" && -n "$repo" ]]; then
+    tmux rename-window $(basename $repo)
+  elif [[ -n "$TMUX" ]]; then
+    tmux set-window-option -q automatic-rename on
   fi
 };
 export PROMPT_COMMAND=muxwin;
