@@ -29,6 +29,5 @@ map <leader>n :NERDTreeToggle<CR>
 nmap <C-t> :CommandT<CR>
 vmap <leader>c :TComment<CR>
 
-" taglist config
-let tlist_php_settings = 'php;c:class;f:function'
-let Tlist_Use_Right_Window = 1
+" folding
+nnoremap <Space> za
