@@ -1,0 +1,36 @@
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule ".vim/bundle/command-t"]
+	path = .vim/bundle/command-t
+	url = git@github.com:wincent/Command-T.git
+[submodule ".vim/bundle/solarized"]
+	path = .vim/bundle/solarized
+	url = git@github.com:altercation/solarized.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git@github.com:scrooloose/syntastic.git
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule ".vim/bundle/stylus"]
+	path = .vim/bundle/stylus
+	url = git@github.com:wavded/vim-stylus.git
+[submodule ".vim/bundle/easymotion"]
+	path = .vim/bundle/easymotion
+	url = git@github.com:Lokaltog/vim-easymotion.git
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule ".vim/bundle/handlebars"]
+	path = .vim/bundle/handlebars
+	url = git@github.com:nono/vim-handlebars.git
+[submodule ".vim/bundle/jade"]
+	path = .vim/bundle/jade
+	url = git@github.com:digitaltoad/vim-jade.git
+[submodule ".vim/bundle/AutoComplPop"]
+	path = .vim/bundle/AutoComplPop
+	url = git@github.com:vim-scripts/AutoComplPop.git
+[submodule ".vim/bundle/tcomment"]
+	path = .vim/bundle/tcomment
+	url = git@github.com:tomtom/tcomment_vim.git

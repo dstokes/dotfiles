@@ -3,7 +3,6 @@ DS_Store
 *.swp
 node_modules
 .vim/autoload/*
-.vim/bundle/*
 .vim/swp/*
 .vim/undo/*
 .vimrc.local
