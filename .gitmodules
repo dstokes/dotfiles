@@ -37,3 +37,9 @@
 [submodule ".vim/bundle/less"]
 	path = .vim/bundle/less
 	url = git@github.com:groenewege/vim-less.git
+[submodule ".vim/bundle/ack"]
+	path = .vim/bundle/ack
+	url = git@github.com:mileszs/ack.vim.git
+[submodule ".vim/bundle/javascript-indent"]
+	path = .vim/bundle/javascript-indent
+	url = git@github.com:vim-scripts/JavaScript-Indent.git
