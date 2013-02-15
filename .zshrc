@@ -35,17 +35,13 @@ ZSH_THEME="robbyrussell"
 plugins=(git npm node vi-mode history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
-
-# load aliases
 source ~/.aliases
+setopt no_share_history
 
 # load super secret local configuration
 if [[ -a ~/.localrc ]]; then
   source ~/.localrc
 fi
-
-hash -d bm=~/Sites/beachmint
-setopt no_share_history
 
 # Set the name of the current tmux window to the current
 # directory if in a git repo, otherwise restore the automatic-rename option
