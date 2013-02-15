@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/javascript-indent"]
 	path = .vim/bundle/javascript-indent
 	url = git@github.com:vim-scripts/JavaScript-Indent.git
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = git@github.com:dstokes/oh-my-zsh.git

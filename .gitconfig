@@ -41,6 +41,7 @@
   cm = commit -m
   co = checkout
   cp = cherry-pick
+  dc = diff -w --cached
   lp = log -p
   po = push origin HEAD
   pw = push web HEAD
