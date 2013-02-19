@@ -31,3 +31,6 @@ vmap <leader>c :TComment<CR>
 
 " folding
 nnoremap <Space> za
+
+" disable ex mode
+map Q <Nop>
