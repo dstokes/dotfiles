@@ -34,6 +34,7 @@ set statusline=%F%=%l/%L,%c\ %P\
 set hlsearch
 set ignorecase
 set incsearch
+set smartcase
 set t_Co=256
 set mouse=a
 set scrolloff=3
