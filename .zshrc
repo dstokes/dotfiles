@@ -57,4 +57,4 @@ precmd() {
 
 
 # Customize to your needs...
-export PATH=/Users/dev/Documents/phpunit-git-deploy/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/dev/Documents/phpunit-git-deploy/bin:/Users/dev/Sites/beachmint/packages/bin:/Users/dev/Sites/beachmint/packages/bin
+export PATH=/Users/dev/Documents/phpunit-git-deploy/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/dev/Documents/phpunit-git-deploy/bin:/Users/dev/Sites/beachmint/packages/bin

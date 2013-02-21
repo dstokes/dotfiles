@@ -3,9 +3,8 @@
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
-" centralize backups & swap files
+" centralize swap files
 set directory=~/.vim/swp
-set backupdir=~/.vim/backup
 
 " show hidden files in NerdTree
 let NERDTreeShowHidden=1
