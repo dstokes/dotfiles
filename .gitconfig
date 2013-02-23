@@ -53,6 +53,7 @@
   lol = !git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   # open git github url for the current repo
   hub = !open `git config --get remote.origin.url | sed 's/:/\\//' | sed 's/git@\\(.*\\)\\.git$/http:\\/\\/\\1/'`
+  root = !git rev-parse --show-toplevel
   stale = remote prune origin --dry-run
 
   # git close [branchname] :: deletes the branch locally and on origin
