@@ -37,6 +37,7 @@ plugins=(git npm node vi-mode history-substring-search)
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 setopt no_share_history
+DISABLE_AUTO_TITLE=true
 
 # load super secret local configuration
 if [[ -a ~/.localrc ]]; then
@@ -47,10 +48,12 @@ fi
 # directory if in a git repo, otherwise restore the automatic-rename option
 precmd() {
   repo=$(git rev-parse --show-toplevel 2> /dev/null)
-  if [[ -n "$TMUX" && -n "$repo" ]]; then
-    tmux rename-window $(basename $repo)
-  elif [[ -n "$TMUX" ]]; then
-    tmux set-window-option -q automatic-rename on
+  if [[ -n "$TMUX" ]]; then
+    if [[ -n "$repo" ]]; then
+      tmux rename-window $(basename "$repo")
+    else
+      tmux set-window-option -q automatic-rename on
+    fi
   fi
   unset repo
 };

@@ -59,3 +59,6 @@ if version >= 703
   set undolevels=1000
   set undoreload=10000
 endif
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber

@@ -46,3 +46,12 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git@github.com:dstokes/oh-my-zsh.git
+[submodule ".vim/bundle/markdown"]
+	path = .vim/bundle/markdown
+	url = git@github.com:plasticboy/vim-markdown.git
+[submodule ".vim/bundle/gitgutter"]
+	path = .vim/bundle/gitgutter
+	url = git@github.com:dstokes/vim-gitgutter.git
+[submodule ".vim/bundle/nodejs-complete"]
+	path = .vim/bundle/nodejs-complete
+	url = git@github.com:myhere/vim-nodejs-complete.git
