@@ -37,6 +37,8 @@ set incsearch
 set smartcase
 set t_Co=256
 set mouse=a
+set mousefocus
+set ttymouse=xterm2
 set scrolloff=3
 set wildmenu                   " show all auto-complete file name options
 set wildmode=list:longest      " emulate shell auto-completion
