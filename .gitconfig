@@ -42,9 +42,13 @@
   co = checkout
   cp = cherry-pick
   dc = diff -w --cached
+  ft = fetch --tags
   lp = log -p
+  pm = !git checkout master && git pull
   po = push origin HEAD
   pw = push web HEAD
+  # git `resolve conflict`
+  rc = !"vim -p `git s | grep UU | awk '{print $2}'`"
 
   cam = commit -am
 
