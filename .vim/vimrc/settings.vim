@@ -1,6 +1,6 @@
 " General settings
 set encoding=utf-8
-set wildignore+=*/node_modules/*
+set wildignore+=*/node_modules/*,*/lib-cov/*
 set autoread
 set nobackup
 set visualbell

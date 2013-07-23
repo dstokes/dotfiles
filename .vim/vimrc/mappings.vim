@@ -1,8 +1,12 @@
 " mappings
 let mapleader = ','
 
-" faster vim commands
+" bypass shift+; for cmds
 nnoremap ; :
+xnoremap ; :
+
+" preserve next f|t search
+nnoremap ;; ;
 
 " make yank work like C & D
 nnoremap Y y$
@@ -26,8 +30,13 @@ map <C-l> <C-w>l
 
 " plugins
 map <leader>n :NERDTreeToggle<CR>
-nmap <C-t> :CommandT<CR>
 vmap <leader>c :TComment<CR>
+
+" command-t
+"let g:CommandTCancelMap=['<ESC>', '<C-c>']
+"let g:CommandTAcceptSelectionSplitMap=['<C-s>']
+"let g:CommandTAcceptSelectionVSplitMap=['<C-i>', '<C-v>']
+nmap <C-t> :CommandT<CR>
 
 " folding
 nnoremap <Space> za
