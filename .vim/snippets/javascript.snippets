@@ -1,0 +1,26 @@
+snippet fn
+	function ${1}(${2}) {
+		${3}
+	}
+
+snippet :fn
+	${1}: function(${2}) {
+		${4}
+	}${3:,}
+
+snippet for
+	for(var i = 0, l = ${1}.length; i < l; i++) {
+		${2}
+	}
+
+snippet jsonp
+	JSON.parse(${1});
+
+snippet jsons
+	JSON.stringify(${1});
+
+snippet lg
+	console.log(${1});
+
+snippet req
+	${1} = require('${2}')

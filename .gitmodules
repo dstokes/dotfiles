@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/nodejs-complete"]
 	path = .vim/bundle/nodejs-complete
 	url = git@github.com:myhere/vim-nodejs-complete.git
+[submodule ".vim/bundle/snipmate"]
+	path = .vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
