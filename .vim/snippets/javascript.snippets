@@ -1,26 +1,40 @@
-snippet fn
-	function ${1}(${2}) {
+snippet if
+	if(${1}) {
+		${2}
+	}
+snippet ifel
+	if(${1}) {
+		${2}
+	} else {
 		${3}
 	}
-
-snippet :fn
-	${1}: function(${2}) {
-		${4}
-	}${3:,}
-
 snippet for
 	for(var i = 0, l = ${1}.length; i < l; i++) {
 		${2}
 	}
-
-snippet jsonp
+snippet fore
+	{$2:.}forEach(function(${1:val}) {
+		${3}
+	});
+snippet map
+	{$2:.}map(function(${1:val}) {
+		${3}
+	});
+snippet fn
+	function${2}(${1}) {
+		${3}
+	}
+snippet :fn
+	${1}: function(${2}) {
+		${4}
+	}${3:,}
+snippet json JSON.parse #1
 	JSON.parse(${1});
-
-snippet jsons
+snippet json JSON.stringify #2
 	JSON.stringify(${1});
-
-snippet lg
+snippet con
 	console.log(${1});
-
+snippet log
+	console.log(${1});
 snippet req
-	${1} = require('${2}')
+	require('${2}')
