@@ -33,7 +33,7 @@
   c = commit
   d = diff -w
   l = log
-  p = !git pull && git su
+  p = pull --rebase
   s = status -sb
 
   br = branch
@@ -44,6 +44,8 @@
   dc = diff -w --cached
   ft = fetch --tags
   lp = log -p
+  lt = !git log --author=drew --pretty=format:'%C(yellow)%h%C(reset)|%ad|%s' \
+        --date relative --after yesterday | awk '{print $0"\n"}' | column -t -s '|'
   pm = !git checkout master && git pull
   po = push origin HEAD
   pw = push web HEAD
