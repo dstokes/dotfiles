@@ -1,0 +1,23 @@
+pkg() {
+  cat package.json | json $1
+}
+
+# setup ide env in current dir
+ide() {
+  # open vim
+  tmux send-keys "v" C-m
+  # open nerdtree
+  tmux send-keys ",n"
+
+  # create supervisor pane
+  tmux split-window -h -p20
+  tmux send-keys "npm run dev" C-m
+
+  # create bash pane
+  tmux select-pane -L
+  tmux split-window -v -p25
+}
+
+procenv() {
+  ps -p $1 -wwwE
+}

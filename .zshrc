@@ -36,6 +36,7 @@ plugins=(git npm vi-mode history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
+source ~/.functions
 setopt no_share_history
 unsetopt correct
 unsetopt correct_all
