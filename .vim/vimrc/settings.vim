@@ -44,6 +44,9 @@ set wildmenu                   " show all auto-complete file name options
 set wildmode=list:longest      " emulate shell auto-completion
 set backspace=indent,eol,start " Allow backspace in insert mode
 set hidden                     " Persist buffer changes without write
+set modeline
+set modelines=5
+set synmaxcol=120              " Prevent UI from locking up on long lines
 
 " Folding
 set foldmethod=syntax
@@ -70,5 +73,5 @@ if &term =~ '^screen'
   execute "set <xLeft>=\e[1;*D"
 endif
 
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
+"autocmd InsertEnter * :set number
+"autocmd InsertLeave * :set relativenumber
