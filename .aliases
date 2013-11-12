@@ -12,7 +12,7 @@ alias la="ls -alsG"
 alias sites='cd ~/Sites'
 alias tmux="TERM=xterm-256color tmux"
 alias ios='open -a /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/'
-function pgrep() { ps aux | sed -e "1p" -e "/$@/!d" }
+function pgrep() { ps aux | sed -e "1p" -e "/$@/!d" | grep -v "\!d$" }
 
 alias dots="vim ~/.zshrc ~/.localrc ~/.aliases ~/.tmux.conf ~/.gitconfig"
 alias jsonp="perl -pe 's/^[^\(]*\((.*)\);?/\1/gi' | json"
