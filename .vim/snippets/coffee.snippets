@@ -6,8 +6,17 @@ snippet Fn
 	(${1}) =>
 		${2}
 
+snippet for
+	for ${1:var} in ${2:list}
+
+snippet l
+	console.log ${1}
+
 snippet log
 	console.log ${1}
 
 snippet r
-	require '${1}'
+	${1:} = require '$1'
+
+snippet #
+	#{${1}}
