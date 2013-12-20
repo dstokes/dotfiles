@@ -64,6 +64,7 @@
 
   # git close [branchname] :: deletes the branch locally and on origin
   close = !sh -c 'git br -d $1 && git push origin :$1' -
+  publish = !sh -c 'npm version $1 && git push origin HEAD && git push --tags && npm publish' -
 
 [web]
   browser = open
