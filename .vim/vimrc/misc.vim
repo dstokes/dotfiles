@@ -22,6 +22,9 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * redraw!
 
+" Remove eol whitespace
+autocmd BufWritePre *.coffee,*.js,*.json :%s/\s\+$//e
+
 " switch between dark and light backgrounds
 nmap \ :call ToggleBG()<CR>
 function! ToggleBG()
