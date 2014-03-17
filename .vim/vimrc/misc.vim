@@ -8,7 +8,7 @@ set directory=~/.vim/swp
 
 " show hidden files in NerdTree
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.DS_Store$', 'node_modules$', '\.git$', 'lib-cov']
+let NERDTreeIgnore = ['\.DS_Store$', '\.git$', 'lib-cov']
 
 " autocomplete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -26,7 +26,7 @@ autocmd InsertLeave * redraw!
 autocmd BufWritePre *.coffee,*.js,*.json :%s/\s\+$//e
 
 " switch between dark and light backgrounds
-nmap \ :call ToggleBG()<CR>
+nmap <leader>\ :call ToggleBG()<CR>
 function! ToggleBG()
    if &background == 'light'
      set background=dark

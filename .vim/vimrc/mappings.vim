@@ -1,12 +1,12 @@
 " mappings
-let mapleader = ','
+let mapleader = '\'
 
 " bypass shift+; for cmds
-nnoremap ; :
-xnoremap ; :
+"nnoremap ; :
+"xnoremap ; :
 
 " preserve next f|t search
-nnoremap ;; ;
+"nnoremap ;; ;
 
 " make yank work like C & D
 nnoremap Y y$
@@ -29,7 +29,7 @@ map <C-l> <C-w>l
 :nnoremap <C-p> :bprevious<CR>
 
 " plugins
-map <leader>n :NERDTreeToggle<CR>
+map <leader>t :NERDTreeToggle<CR>
 vmap <leader>c :TComment<CR>
 
 " command-t
