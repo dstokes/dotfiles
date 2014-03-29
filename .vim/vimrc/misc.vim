@@ -26,7 +26,7 @@ autocmd InsertLeave * redraw!
 autocmd BufWritePre *.coffee,*.js,*.json :%s/\s\+$//e
 
 " switch between dark and light backgrounds
-nmap <leader>\ :call ToggleBG()<CR>
+nmap <leader>s :call ToggleBG()<CR>
 function! ToggleBG()
    if &background == 'light'
      set background=dark

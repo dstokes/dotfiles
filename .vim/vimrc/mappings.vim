@@ -36,7 +36,11 @@ vmap <leader>c :TComment<CR>
 "let g:CommandTCancelMap=['<ESC>', '<C-c>']
 "let g:CommandTAcceptSelectionSplitMap=['<C-s>']
 "let g:CommandTAcceptSelectionVSplitMap=['<C-i>', '<C-v>']
+let g:CommandTAcceptSelectionSplitMap=['<C-i>']
 nmap <C-t> :CommandT<CR>
+
+" unmap surround weirdness
+let g:surround_no_insert_mappings=1
 
 " folding
 nnoremap <Space> za
