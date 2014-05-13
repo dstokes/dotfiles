@@ -11,8 +11,14 @@ let mapleader = '\'
 " make yank work like C & D
 nnoremap Y y$
 
+" select pasted text
+nnoremap gp `[V`]
+
+" yank entire buffer to clipboard
+nnoremap ya ggVG"*y
+
 " toggle search highlighting
-nmap <silent> ,/ :set invhlsearch<CR>
+"nmap <silent> ,/ :set invhlsearch<CR>
 
 " continuous indent in visual mode
 vmap < <gv
@@ -35,6 +41,7 @@ vmap <leader>c :TComment<CR>
 " command-t
 "let g:CommandTCancelMap=['<ESC>', '<C-c>']
 nmap <C-t> :CommandT<CR>
+map <leader>f :CommandT<CR>
 
 " unmap surround weirdness
 let g:surround_no_insert_mappings=1

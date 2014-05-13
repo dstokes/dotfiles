@@ -3,7 +3,8 @@ alias ...="cd ../.."
 alias -- -="cd -"
 alias x="exit"
 
-alias g="git"
+alias g=git
+alias gti=git
 alias v=vim
 alias vi=vim
 alias vim="vim -p -w ~/.vimlog_\$(date '+%Y%m%d')"

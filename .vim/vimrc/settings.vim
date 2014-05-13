@@ -1,6 +1,6 @@
 " General settings
 set encoding=utf-8
-set wildignore+=*/node_modules/*,*/lib-cov/*
+set wildignore+=*/node_modules/*
 set autoread
 set nobackup
 set visualbell
@@ -24,7 +24,8 @@ set tabstop=2
 " UI
 set list
 set listchars=tab:▸\ 
-set background=dark
+"set background=dark
+set background=light
 colorscheme solarized
 set colorcolumn=80
 set splitright
@@ -47,6 +48,7 @@ set hidden                     " Persist buffer changes without write
 set modeline
 set modelines=5
 set synmaxcol=120              " Prevent UI from locking up on long lines
+highlight Search ctermfg=7 ctermbg=6
 
 " Folding
 set foldmethod=syntax

@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/snipmate"]
 	path = .vim/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
+[submodule ".vim/bundle/ag"]
+	path = .vim/bundle/ag
+	url = https://github.com/rking/ag.vim
