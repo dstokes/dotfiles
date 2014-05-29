@@ -17,13 +17,16 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 " coffee-script folding
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 
+" salt syntax highlighting
+autocmd BufRead,BufNewFile *.template setfiletype JavaScript
+
 " highlight end-of-line whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * redraw!
 
 " Remove eol whitespace
-autocmd BufWritePre *.coffee,*.js,*.json :%s/\s\+$//e
+autocmd BufWritePre *.coffee,*.js,*.json,*.template,*.sls :%s/\s\+$//e
 
 " switch between dark and light backgrounds
 nmap <leader>s :call ToggleBG()<CR>
