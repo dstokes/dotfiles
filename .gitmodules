@@ -61,3 +61,9 @@
 [submodule ".vim/bundle/ag"]
 	path = .vim/bundle/ag
 	url = https://github.com/rking/ag.vim
+[submodule ".vim/bundle/salt-vim"]
+	path = .vim/bundle/salt-vim
+	url = https://github.com/saltstack/salt-vim.git
+[submodule ".vim/bundle/vim-json"]
+	path = .vim/bundle/vim-json
+	url = https://github.com/saltstack/salt-vim.git

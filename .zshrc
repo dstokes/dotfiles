@@ -34,6 +34,8 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git npm vi-mode history-substring-search)
 
+PYTHONUNBUFFERED=1
+
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 source ~/.functions
@@ -65,6 +67,9 @@ precmd() {
 
 # free up <C-S> for vim
 stty -ixon -ixoff
+
+# PS1="\[\033[35m\]`date +"[%a %Y-%m-%d %H:%M:%S]"`\[\033[m\] \[\e[1;32m\]\u@\H:\[\e[m\]\[\e[1;37m\]\w\[\e[m\]  \[\033[36m\][`wget -qO- ifconfig.me/ip`]\[\033[36m\] \[\033[37m\]\$\[\033[0m\] "
+alias fullscreen="export AWS_DEFAULT_PROFILE=fullscreen"
 
 # Customize to your needs...
 export PATH=/Users/dev/Documents/phpunit-git-deploy/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/dev/Documents/phpunit-git-deploy/bin:/Users/dev/Sites/beachmint/packages/bin
