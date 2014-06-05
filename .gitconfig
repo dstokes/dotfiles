@@ -57,6 +57,7 @@
   amd = commit --amend --no-edit
   cam = commit -am
   dcp = log --left-right --graph --cherry-pick --oneline
+  pop = stash pop
 
   su = submodule update --recursive
   sui = submodule update --init --recursive

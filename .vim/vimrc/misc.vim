@@ -18,7 +18,8 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 
 " salt syntax highlighting
-autocmd BufRead,BufNewFile *.template setfiletype JavaScript
+autocmd BufRead,BufNewFile *.template set filetype=JavaScript
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " highlight end-of-line whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
