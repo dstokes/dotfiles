@@ -14,8 +14,8 @@ let NERDTreeIgnore = ['\.DS_Store$', '\.git$', 'lib-cov']
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-" coffee-script folding
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+autocmd BufNewFile,BufReadPost *.rb,*.rake setl foldmethod=indent
 
 " salt syntax highlighting
 autocmd BufRead,BufNewFile *.template set filetype=JavaScript
