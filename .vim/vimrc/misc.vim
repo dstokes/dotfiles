@@ -8,7 +8,7 @@ set directory=~/.vim/swp
 
 " show hidden files in NerdTree
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.DS_Store$', '\.git$', 'lib-cov']
+let NERDTreeIgnore = ['\.DS_Store$', '\.git$', 'lib-cov', '\.idea']
 
 " autocomplete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -20,6 +20,7 @@ autocmd BufNewFile,BufReadPost *.rb,*.rake setl foldmethod=indent
 " salt syntax highlighting
 autocmd BufRead,BufNewFile *.template set filetype=JavaScript
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 " highlight end-of-line whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -30,11 +31,11 @@ autocmd InsertLeave * redraw!
 autocmd BufWritePre *.coffee,*.js,*.json,*.template,*.sls :%s/\s\+$//e
 
 " switch between dark and light backgrounds
-nmap <leader>s :call ToggleBG()<CR>
-function! ToggleBG()
-   if &background == 'light'
-     set background=dark
-   else
-     set background=light
-   endif
- endfunction
+" nmap <leader>s :call ToggleBG()<CR>
+" function! ToggleBG()
+"    if &background == 'light'
+"      set background=dark
+"    else
+"      set background=light
+"    endif
+"  endfunction
