@@ -68,6 +68,9 @@ precmd() {
 # free up <C-S> for vim
 stty -ixon -ixoff
 
+# re-enable bash-y history search
+bindkey '^R' history-incremental-search-backward
+
 # PS1="\[\033[35m\]`date +"[%a %Y-%m-%d %H:%M:%S]"`\[\033[m\] \[\e[1;32m\]\u@\H:\[\e[m\]\[\e[1;37m\]\w\[\e[m\]  \[\033[36m\][`wget -qO- ifconfig.me/ip`]\[\033[36m\] \[\033[37m\]\$\[\033[0m\] "
 alias fullscreen="export AWS_DEFAULT_PROFILE=fullscreen"
 
