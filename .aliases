@@ -3,7 +3,7 @@ alias ...="cd ../.."
 alias -- -="cd -"
 alias x="exit"
 
-alias ag="ag -i"
+alias ag="ag -i -S"
 
 alias g=git
 alias gti=git

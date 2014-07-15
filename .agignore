@@ -1,0 +1,9 @@
+tmp
+vendor
+images
+node_modules
+.DS_Store
+*.pyc
+*.log
+*.swp
+*.csv
