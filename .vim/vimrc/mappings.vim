@@ -35,13 +35,14 @@ map <C-l> <C-w>l
 :nnoremap <C-p> :bprevious<CR>
 
 " plugins
-map <leader>t :NERDTreeToggle<CR>
 vmap <leader>c :TComment<CR>
+map <leader>t :NERDTreeToggle<CR>
+map <leader>f :CommandT<CR>
+map <leader>b :CommandTBuffer<CR>
 
 " command-t
 "let g:CommandTCancelMap=['<ESC>', '<C-c>']
 nmap <C-t> :CommandT<CR>
-map <leader>f :CommandT<CR>
 
 " unmap surround weirdness
 let g:surround_no_insert_mappings=1
