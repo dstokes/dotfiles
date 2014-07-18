@@ -8,7 +8,7 @@ set directory=~/.vim/swp
 
 " show hidden files in NerdTree
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.DS_Store$', '\.git$', '\.vagrant', '\.idea']
+let NERDTreeIgnore = ['\.DS_Store$', '\.git$', '\.vagrant', '\.idea', 'node_modules']
 
 " autocomplete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
