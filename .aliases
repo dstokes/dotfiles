@@ -19,7 +19,7 @@ function pgrep() { ps aux | sed -e "1p" -e "/$@/!d" | grep -v "\!d$" }
 
 alias dots="vim ~/.zshrc ~/.localrc ~/.aliases ~/.tmux.conf ~/.gitconfig"
 alias jsonp="perl -pe 's/^[^\(]*\((.*)\);?/\1/gi' | json"
-alias do="v ~/TODO.md"
+alias todo="v ~/TODO.md"
 
 alias fdns="sudo killall -HUP mDNSResponder"
 
