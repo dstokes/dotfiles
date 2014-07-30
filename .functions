@@ -21,3 +21,16 @@ ide() {
 procenv() {
   ps -p $1 -wwwE
 }
+
+todo() {
+  if [[ -e ~/Dropbox ]]; then
+    vi ~/Dropbox/TODO.md
+  else
+    vi ~/TODO.md
+  fi
+}
+
+# create a test directory
+testdir() {
+  mkdir -p ~/Code/test.$RANDOM && cd $_
+}
