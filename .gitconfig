@@ -47,6 +47,7 @@
   lt = !git log --author=drew --pretty=format:'%C(yellow)%h%C(reset)|%ad|%s' \
         --date relative --since 1am | awk '{print $0"\n"}' | column -t -s '|'
   pm = !git checkout master && git pull
+  ph = push heroku HEAD
   po = push origin HEAD
   pw = push web HEAD
   pr = "!f() { git fetch origin refs/pull/$1/head:pr/$1; } ; f"

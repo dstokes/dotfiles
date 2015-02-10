@@ -15,10 +15,11 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
-autocmd BufNewFile,BufReadPost *.rb,*.rake setl foldmethod=indent
+autocmd BufNewFile,BufReadPost *.rb,*.rake,Vagrantfile setl foldmethod=indent
 autocmd BufNewFile,BufRead *.py setl tabstop=2 shiftwidth=2 softtabstop=2
 
 " salt syntax highlighting
+autocmd BufRead,BufNewFile *.jinja set filetype=jinja
 autocmd BufRead,BufNewFile *.template set filetype=json
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
