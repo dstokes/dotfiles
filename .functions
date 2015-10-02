@@ -34,3 +34,37 @@ todo() {
 testdir() {
   mkdir -p ~/Code/test.$RANDOM && cd $_
 }
+
+function vpn() {
+  while getopts ":d" opt; do
+    if [[ $opt == "d" ]]; then 1=$2; ACTION=Disconnect; fi
+  done
+  osascript -e 'tell application "Viscosity" to '${ACTION:-Connect}' "'$1'"'
+}
+
+function redis {
+  redis-cli $(echo "$1" | sed -E -e 's/redis:\/\/([^:]*)?:/-a /' -e 's/\@/ -h /' -e 's/:/ -p /' -e 's/\///g')
+}
+
+# edit and repackage a debian file
+function editdeb() {
+  PACKAGE=$1
+  NEW_PACKAGE=${2:-$1}
+
+  if [[ -z "$PACKAGE" ]]; then
+    echo "Usage: $0 <deb> [new_deb]" >&2
+    return 1
+  fi
+
+  WORKDIR=/tmp/test.$RANDOM
+  mkdir -p $WORKDIR
+
+  # unpack and start a shell
+  dpkg-deb -R "$PACKAGE" $WORKDIR
+  pushd $WORKDIR &>/dev/null
+  /bin/bash
+
+  # repack
+  popd &>/dev/null
+  dpkg-deb -b $WORKDIR "$NEW_PACKAGE"
+}

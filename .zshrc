@@ -46,11 +46,6 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="true"
 skip_global_compinit=1
 
-# load super secret local configuration
-if [[ -a ~/.localrc ]]; then
-  source ~/.localrc
-fi
-
 # Set the name of the current tmux window to the current
 # directory if in a git repo, otherwise restore the automatic-rename option
 precmd() {
@@ -72,7 +67,13 @@ stty -ixon -ixoff
 bindkey '^R' history-incremental-search-backward
 
 # PS1="\[\033[35m\]`date +"[%a %Y-%m-%d %H:%M:%S]"`\[\033[m\] \[\e[1;32m\]\u@\H:\[\e[m\]\[\e[1;37m\]\w\[\e[m\]  \[\033[36m\][`wget -qO- ifconfig.me/ip`]\[\033[36m\] \[\033[37m\]\$\[\033[0m\] "
-alias fullscreen="export AWS_DEFAULT_PROFILE=fullscreen"
 
-# Customize to your needs...
-export PATH=/Users/dev/Documents/phpunit-git-deploy/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/dev/Documents/phpunit-git-deploy/bin:/Users/dev/Sites/beachmint/packages/bin
+#RPROMPT='%{$fg_bold[blue]%}[%!][$(date +%T)] % %{$reset_color%}'
+
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin
+
+# load super secret local configuration
+if [[ -a ~/.localrc ]]; then
+  source ~/.localrc
+fi
+

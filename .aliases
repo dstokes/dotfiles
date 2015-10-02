@@ -9,6 +9,8 @@ alias g=git
 alias gti=git
 alias gpg1=/usr/local/bin/gpg
 alias gpg=/usr/local/bin/gpg2
+alias h=history
+alias hist=history
 alias v=vim
 alias vi=vim
 alias vim="vim -p -w ~/.vimlog_\$(date '+%Y%m%d')"
@@ -21,9 +23,9 @@ function pgrep() { ps aux | sed -e "1p" -e "/$@/!d" | grep -v "\!d$" }
 
 # vagrant aliases
 alias vg=vagrant
-alias vgs=vagrant ssh
-alias vgu=vagrant up
-alias vgd=vagrant destroy -f
+alias vgs="vagrant ssh"
+alias vgu="vagrant up"
+alias vgd="vagrant destroy -f"
 
 alias dots="vim ~/.zshrc ~/.localrc ~/.aliases ~/.tmux.conf ~/.gitconfig"
 alias jsonp="perl -pe 's/^[^\(]*\((.*)\);?/\1/gi' | json"

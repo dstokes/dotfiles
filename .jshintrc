@@ -1,5 +1,6 @@
 { "asi":true
 , "browser":true
+, "esnext": true
 , "nonstandard":true
 , "smarttabs":true
 , "laxbreak":true
@@ -9,6 +10,8 @@
 , "eqeqeq":false
 , "eqnull":true
 , "evil":true
+, "node": true
+, "undef": true
 , "predef":[
       "$"
     , "mint"

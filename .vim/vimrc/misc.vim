@@ -8,12 +8,15 @@ set directory=~/.vim/swp
 
 " show hidden files in NerdTree
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.DS_Store$', '\.git$', '\.vagrant', '\.idea', 'node_modules']
+let NERDTreeIgnore = ['\.DS_Store$', '\.git$', '\.vagrant', '\.idea', 'node_modules', '.1$']
 
 " autocomplete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType go set noexpandtab
 
+autocmd BufNewFile,BufRead,BufWritePre *.go Fmt
+autocmd BufRead,BufNewFile *.e,*.es6 set filetype=Javascript
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 autocmd BufNewFile,BufReadPost *.rb,*.rake,Vagrantfile setl foldmethod=indent
 autocmd BufNewFile,BufRead *.py setl tabstop=2 shiftwidth=2 softtabstop=2
