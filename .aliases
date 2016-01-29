@@ -10,14 +10,12 @@ alias gti=git
 alias gpg1=/usr/local/bin/gpg
 alias gpg=/usr/local/bin/gpg2
 alias h=history
-alias hist=history
 alias v=vim
 alias vi=vim
 alias vim="vim -p -w ~/.vimlog_\$(date '+%Y%m%d').$RANDOM"
 alias ls="ls -G"
 alias la="ls -alsG"
 alias sites='cd ~/Sites'
-alias tmux="TERM=xterm-256color tmux"
 alias ios='open -a /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/'
 function pgrep() { ps aux | sed -e "1p" -e "/$@/!d" | grep -v "\!d$" }
 
