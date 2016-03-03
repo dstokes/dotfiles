@@ -70,6 +70,10 @@ bindkey '^R' history-incremental-search-backward
 
 #RPROMPT='%{$fg_bold[blue]%}[%!][$(date +%T)] % %{$reset_color%}'
 
+# export bc config
+export BC_ENV_ARGS=~/.bcrc
+
+export TERM='xterm-256color'
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin
 
 # load super secret local configuration
