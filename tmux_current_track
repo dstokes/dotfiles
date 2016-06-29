@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 SPOTIFY_TRACK=$(osascript <<EOF
-tell application "Spotify"
-  set currArtist to artist of current track as string
-  set currTrack to name of current track as string
-  return currArtist & " - " & currTrack
-end tell
+if application "Spotify" is running then
+  tell application "Spotify"
+    set currArtist to artist of current track as string
+    set currTrack to name of current track as string
+    return currArtist & " - " & currTrack
+  end tell
+end if
 EOF)
 
 test -n "$SPOTIFY_TRACK" && echo '♫ ' $SPOTIFY_TRACK ' |'
