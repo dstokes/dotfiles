@@ -13,21 +13,12 @@
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = git@github.com:tpope/vim-fugitive.git
-[submodule ".vim/bundle/stylus"]
-	path = .vim/bundle/stylus
-	url = git@github.com:wavded/vim-stylus.git
 [submodule ".vim/bundle/easymotion"]
 	path = .vim/bundle/easymotion
 	url = git@github.com:Lokaltog/vim-easymotion.git
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = git@github.com:tpope/vim-surround.git
-[submodule ".vim/bundle/handlebars"]
-	path = .vim/bundle/handlebars
-	url = git@github.com:nono/vim-handlebars.git
-[submodule ".vim/bundle/jade"]
-	path = .vim/bundle/jade
-	url = git@github.com:digitaltoad/vim-jade.git
 [submodule ".vim/bundle/AutoComplPop"]
 	path = .vim/bundle/AutoComplPop
 	url = git@github.com:vim-scripts/AutoComplPop.git
@@ -37,9 +28,6 @@
 [submodule ".vim/bundle/less"]
 	path = .vim/bundle/less
 	url = git@github.com:groenewege/vim-less.git
-[submodule ".vim/bundle/ack"]
-	path = .vim/bundle/ack
-	url = git@github.com:mileszs/ack.vim.git
 [submodule ".vim/bundle/javascript-indent"]
 	path = .vim/bundle/javascript-indent
 	url = git@github.com:vim-scripts/JavaScript-Indent.git
@@ -70,3 +58,6 @@
 [submodule ".vim/bundle/vim-jinja2"]
 	path = .vim/bundle/vim-jinja2
 	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
+[submodule ".vim/bundle/fzf.vim"]
+	path = .vim/bundle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
