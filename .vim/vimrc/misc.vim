@@ -1,5 +1,4 @@
 " Misc Settings
-
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
@@ -10,12 +9,15 @@ set directory=~/.vim/swp
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.DS_Store$', '\.git$', '\.vagrant', '\.idea', 'node_modules', '.1$']
 
+let g:go_list_type = "quickfix"
+let g:syntastic_go_checkers = ['golint', 'errcheck']
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
 " autocomplete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType go set noexpandtab
 
-autocmd BufNewFile,BufRead,BufWritePre *.go Fmt
 autocmd BufRead,BufNewFile *.e,*.es6 set filetype=Javascript
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 autocmd BufNewFile,BufReadPost *.rb,*.rake,Vagrantfile setl foldmethod=indent

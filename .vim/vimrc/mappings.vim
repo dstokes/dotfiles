@@ -25,10 +25,10 @@ vmap < <gv
 vmap > >gv
 
 " easy window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " scroll through buffers
 :nnoremap <C-n> :bnext<CR>
@@ -37,12 +37,8 @@ map <C-l> <C-w>l
 " plugins
 vmap <leader>c :TComment<CR>
 map <leader>t :NERDTreeToggle<CR>
-map <leader>f :CommandT<CR>
-map <leader>b :CommandTBuffer<CR>
 
-" command-t
-"let g:CommandTCancelMap=['<ESC>', '<C-c>']
-nmap <C-t> :CommandT<CR>
+map <leader>f :Files<CR>
 
 " unmap surround weirdness
 let g:surround_no_insert_mappings=1
