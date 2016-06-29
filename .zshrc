@@ -32,7 +32,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vi-mode history-substring-search)
+plugins=(git vi-mode history-substring-search gpg-agent)
 
 PYTHONUNBUFFERED=1
 
@@ -75,6 +75,12 @@ export BC_ENV_ARGS=~/.bcrc
 
 export TERM='xterm-256color'
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin
+
+if [[ -f ~/.gnupg/gpg-agent.env ]]; then
+  source ~/.gnupg/gpg-agent.env
+  export GPG_AGENT_INFO
+  export SSH_AUTH_SOCK
+fi
 
 # load super secret local configuration
 if [[ -a ~/.localrc ]]; then
