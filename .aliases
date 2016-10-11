@@ -12,11 +12,10 @@ alias gpg=/usr/local/bin/gpg2
 alias h=history
 alias v=vim
 alias vi=vim
-alias vim="nvim -p -w ~/vimlogs/\$(date '+%Y%m%d').$RANDOM.log"
+alias vim="nvim -p"
 alias ls="ls -G"
 alias la="ls -alsG"
 alias sites='cd ~/Sites'
-alias ios='open -a /Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/'
 function pgrep() { ps aux | sed -e "1p" -e "/$@/!d" | grep -v "\!d$" }
 
 # vagrant aliases
@@ -26,8 +25,6 @@ alias vgu="vagrant up"
 alias vgd="vagrant destroy -f"
 
 alias dots="vim ~/.zshrc ~/.localrc ~/.aliases ~/.tmux.conf ~/.gitconfig"
-alias jsonp="perl -pe 's/^[^\(]*\((.*)\);?/\1/gi' | json"
-
 alias fdns="sudo discoveryutil udnsflushcaches"
 
 # View HTTP traffic

@@ -36,13 +36,3 @@ autocmd InsertLeave * redraw!
 
 " Remove eol whitespace
 autocmd BufWritePre *.coffee,*.js,*.json,*.template,*.sls :%s/\s\+$//e
-
-" switch between dark and light backgrounds
-" nmap <leader>s :call ToggleBG()<CR>
-" function! ToggleBG()
-"    if &background == 'light'
-"      set background=dark
-"    else
-"      set background=light
-"    endif
-"  endfunction

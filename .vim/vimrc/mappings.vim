@@ -1,13 +1,6 @@
 " mappings
 let mapleader = '\'
 
-" bypass shift+; for cmds
-"nnoremap ; :
-"xnoremap ; :
-
-" preserve next f|t search
-"nnoremap ;; ;
-
 " make yank work like C & D
 nnoremap Y y$
 
@@ -16,9 +9,6 @@ nnoremap gp `[V`]
 
 " yank entire buffer to clipboard
 nnoremap ya ggVG"*y
-
-" toggle search highlighting
-"nmap <silent> ,/ :set invhlsearch<CR>
 
 " continuous indent in visual mode
 vmap < <gv
@@ -37,7 +27,7 @@ nnoremap <C-l> <C-w>l
 " plugins
 vmap <leader>c :TComment<CR>
 map <leader>t :NERDTreeToggle<CR>
-
+" fzf
 map <leader>f :Files<CR>
 
 " unmap surround weirdness

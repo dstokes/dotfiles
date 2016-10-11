@@ -1,7 +1,21 @@
 set nocompatible
-call pathogen#infect()
-filetype plugin on
 syntax enable
+filetype plugin on
+
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+Plug 'tomtom/tcomment_vim'
+Plug 'vim-scripts/AutoComplPop'
+
+Plug 'fatih/vim-go', { 'for': 'golang' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'junegunn/fzf', { 'dir': '~/Code/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tpope/vim-fugitive', { 'on': ['GBlame', 'GBrowse'] }
+call plug#end()
 
 source $HOME/.vim/vimrc/settings.vim
 source $HOME/.vim/vimrc/mappings.vim

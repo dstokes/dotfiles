@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="dstokes"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -69,6 +69,7 @@ bindkey '^R' history-incremental-search-backward
 # PS1="\[\033[35m\]`date +"[%a %Y-%m-%d %H:%M:%S]"`\[\033[m\] \[\e[1;32m\]\u@\H:\[\e[m\]\[\e[1;37m\]\w\[\e[m\]  \[\033[36m\][`wget -qO- ifconfig.me/ip`]\[\033[36m\] \[\033[37m\]\$\[\033[0m\] "
 
 #RPROMPT='%{$fg_bold[blue]%}[%!][$(date +%T)] % %{$reset_color%}'
+ZLE_RPROMPT_INDENT=0
 
 # export bc config
 export BC_ENV_ARGS=~/.bcrc
