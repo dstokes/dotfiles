@@ -1,0 +1,19 @@
+* Remap Mac media keys
+[F2]>[F7]
+[F3]>[F8]
+[F4]>[F9]
+[prtscr]>[F10]
+[scroll]>[F11]
+[pause]>[F12]
+
+* Mac thumb keys
+[kp=]>[kp=mac]
+[lctrl]>[lwin]
+[kp-lctrl]>[kp-lwin]
+[rctrl]>[rwin]
+[kp-rctrl]>[kp-rwin]
+[rwin]>[rctrl]
+[kp-rwin]>[kp-rctrl]
+
+[caps]>[lctrl]
+[delete]>[escape]
