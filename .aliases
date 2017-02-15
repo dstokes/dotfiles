@@ -24,9 +24,4 @@ alias vgs="vagrant ssh"
 alias vgu="vagrant up"
 alias vgd="vagrant destroy -f"
 
-alias dots="vim ~/.zshrc ~/.localrc ~/.aliases ~/.tmux.conf ~/.gitconfig"
-alias fdns="sudo discoveryutil udnsflushcaches"
-
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+function slow() { awk '{if (system("sleep '${1:-.3}' && exit 2") != 2) exit; print}' }

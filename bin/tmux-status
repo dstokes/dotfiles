@@ -1,0 +1,29 @@
+#!/bin/bash
+
+ICON_MUSIC=♫
+
+# date string
+STATUS="$(date +"%a %m/%d %I:%M") "
+
+# battery percentage
+S_BATT=$(pmset -g batt 2>&1 | awk -F ';' 'NR==2 {sub(/%/, "", $1); print $1;}' | cut -f2)
+if [[ $S_BATT -lt 0 ]]; then
+  STATUS="$S_BATT% | $STATUS"
+fi
+
+# current spotify track
+S_TRACK=$(osascript <<EOF
+if application "Spotify" is running then
+  tell application "Spotify"
+    return name of current track as string
+  end tell
+end if
+EOF)
+if [[ -n "$S_TRACK" ]]; then
+  if [[ ${#S_TRACK} -ge 25 ]]; then
+    S_TRACK="${S_TRACK:0:18}.."
+  fi
+  STATUS="$ICON_MUSIC $S_TRACK | $STATUS"
+fi
+
+printf "%s" "$STATUS"

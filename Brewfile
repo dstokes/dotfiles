@@ -9,9 +9,11 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
 
+brew 'awscli'
 brew 'bash'
 brew 'coreutils'
 brew 'curl'
+brew 'dnsmasq'
 brew 'fzf'
 brew 'git'
 brew 'gnupg2'
