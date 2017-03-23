@@ -46,20 +46,6 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="true"
 skip_global_compinit=1
 
-# Set the name of the current tmux window to the current
-# directory if in a git repo, otherwise restore the automatic-rename option
-precmd() {
-  repo=$(git rev-parse --show-toplevel 2> /dev/null)
-  if [[ -n "$TMUX" ]]; then
-    if [[ -n "$repo" ]]; then
-      tmux rename-window $(basename "$repo")
-    else
-      tmux set-window-option -q automatic-rename on
-    fi
-  fi
-  unset repo
-};
-
 # free up <C-S> for vim
 stty -ixon -ixoff
 

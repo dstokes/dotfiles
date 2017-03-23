@@ -22,6 +22,7 @@ autocmd BufRead,BufNewFile *.e,*.es6 set filetype=Javascript
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 autocmd BufNewFile,BufReadPost *.rb,*.rake,Vagrantfile setl foldmethod=indent
 autocmd BufNewFile,BufRead *.py setl tabstop=2 shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufRead Dockerfile* setl filetype=Dockerfile
 
 " salt syntax highlighting
 autocmd BufRead,BufNewFile *.jinja set filetype=jinja

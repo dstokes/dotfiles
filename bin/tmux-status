@@ -20,8 +20,8 @@ if application "Spotify" is running then
 end if
 EOF)
 if [[ -n "$S_TRACK" ]]; then
-  if [[ ${#S_TRACK} -ge 25 ]]; then
-    S_TRACK="${S_TRACK:0:18}.."
+  if [[ ${#S_TRACK} -ge 30 ]]; then
+    S_TRACK="${S_TRACK:0:23}.."
   fi
   STATUS="$ICON_MUSIC $S_TRACK | $STATUS"
 fi

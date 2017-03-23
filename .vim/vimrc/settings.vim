@@ -33,8 +33,8 @@ colorscheme solarized
 set colorcolumn=80
 set splitright
 set splitbelow
-set laststatus=2
-set statusline=%F%=%l/%L,%c\ %P\ 
+set laststatus=0
+"set statusline=%F%=%l/%L,%c\ %P\ 
 set hlsearch
 set ignorecase
 set incsearch
