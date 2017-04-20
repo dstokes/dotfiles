@@ -1,6 +1,7 @@
 [user]
   name = Drew Stokes
   email = drew@drewstokes.com
+  signingkey = ED916D50A59ACE74
 
 [color]
   branch = auto
@@ -32,7 +33,7 @@
   a = add
   c = commit
   d = diff -w
-  l = log
+  l = log --show-signature
   p = pull --rebase
   s = status -sb
 
@@ -74,3 +75,5 @@
 
 [web]
   browser = open
+[ghi]
+	token = !security find-internet-password -a dstokes -s github.com -l 'ghi token' -w

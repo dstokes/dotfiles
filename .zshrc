@@ -74,3 +74,4 @@ if [[ -a ~/.localrc ]]; then
   source ~/.localrc
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

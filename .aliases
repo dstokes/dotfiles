@@ -25,3 +25,4 @@ alias vgu="vagrant up"
 alias vgd="vagrant destroy -f"
 
 function slow() { awk '{if (system("sleep '${1:-.3}' && exit 2") != 2) exit; print}' }
+alias colours='for i in {0..255}; do printf "%s \x1b[38;5;${i}mcolour${i}\x1b[0m\n" $i; done'
