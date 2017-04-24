@@ -5,6 +5,28 @@ ICON_MUSIC=♫
 # date string
 STATUS="$(date +"%a %m/%d %I:%M") "
 
+# weather
+if [[ -f ~/.tmux.weather ]]; then
+  NOW=$(date +%s)
+  MOD=$(date -r ~/.tmux.weather +%s)
+  if [[ $(( $NOW - $MOD )) -gt 900 ]]; then
+    rm ~/.tmux.weather
+  fi
+else
+  LOCATION=$(curl -s ipinfo.io | jq -r '.city + ", " + .region | @uri')
+  URL='https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22'$LOCATION'%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
+  read CODE DEGREES <<< $(curl -s "$URL" | jq -r '.query.results.channel.item.condition | .code + " " + .temp')
+  case "$CODE" in
+  [9-12])  ICON=☂ ;;
+  [26-30]) ICON=☁ ;;
+  [32-34]) ICON=☀ ;;
+  *)       ICON="";;
+  esac
+  echo "$ICON${DEGREES}°" > ~/.tmux.weather
+fi
+STATUS="$(cat ~/.tmux.weather) $STATUS"
+
+
 # battery percentage
 S_BATT=$(pmset -g batt 2>&1 | awk -F ';' 'NR==2 {sub(/%/, "", $1); print $1;}' | cut -f2)
 if [[ $S_BATT -lt 0 ]]; then
