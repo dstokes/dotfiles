@@ -67,6 +67,8 @@ if [[ -f ~/.gnupg/gpg-agent.env ]]; then
   source ~/.gnupg/gpg-agent.env
   export GPG_AGENT_INFO
   export SSH_AUTH_SOCK
+else
+  export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
 fi
 
 # load super secret local configuration
