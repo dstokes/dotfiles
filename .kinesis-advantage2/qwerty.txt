@@ -1,10 +1,10 @@
 * Remap Mac media keys
-[F2]>[F7]
-[F3]>[F8]
-[F4]>[F9]
-[prtscr]>[F10]
-[scroll]>[F11]
-[pause]>[F12]
+[F3]>[prev]
+[F4]>[play]
+[F5]>[next]
+[prtscr]>[kp-mute]
+[scroll]>[vol-]
+[pause]>[vol+]
 
 * Mac thumb keys
 [kp=]>[kp=mac]
