@@ -1,2 +1,1 @@
-Welcome $HOME
-=============
+![term](term.png)
