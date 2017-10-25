@@ -6,3 +6,4 @@ node_modules
 .aws
 .vim/.netrwhist
 .vim/plugged
+.jrnl

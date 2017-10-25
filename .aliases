@@ -10,6 +10,7 @@ alias gti=git
 alias gpg1=/usr/local/bin/gpg
 alias gpg=/usr/local/bin/gpg2
 alias h=history
+alias jrnl=" jrnl"
 alias v=vim
 alias vi=vim
 alias vim="nvim -p"

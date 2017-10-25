@@ -40,6 +40,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 source ~/.functions
 setopt no_share_history
+setopt HIST_IGNORE_SPACE
 unsetopt correct
 unsetopt correct_all
 DISABLE_AUTO_TITLE="true"
