@@ -3,7 +3,7 @@
 ICON_MUSIC=♫
 
 # date string
-STATUS="$(date +"%a %m/%d %I:%M") "
+STATUS="$(date +"%a %d %I:%M") "
 
 # weather
 if [[ -f ~/.tmux.weather ]]; then
@@ -16,7 +16,6 @@ else
   WOEID="12798399"
   URL='https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%20'$WOEID'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
   read CODE DEGREES <<< $(curl -s "$URL" | jq -r '.query.results.channel.item.condition | .code + " " + .temp')
-  echo $CODE
   case "$CODE" in
   9|1[0-2])  ICON="☂ ";;
   2[6-9]|30) ICON="☁ ";;
