@@ -1,10 +1,12 @@
 alias ..="cd .."
 alias ...="cd ../.."
 alias -- -="cd -"
+alias c="clear"
 alias x="exit"
 
 alias ag="ag -i -S"
 
+alias dc=docker-compose
 alias g=git
 alias gti=git
 alias gpg1=/usr/local/bin/gpg
