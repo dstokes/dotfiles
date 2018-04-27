@@ -1,1 +1,1 @@
-/Users/dstokes/.vimrc
+../.vimrc
