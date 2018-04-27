@@ -1,6 +1,6 @@
 call plug#begin()
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'airblade/vim-gitgutter'
