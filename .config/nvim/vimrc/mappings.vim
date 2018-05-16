@@ -27,6 +27,7 @@ nnoremap <C-p> :bprevious<CR>
 " plugins
 vmap <leader>c :TComment<CR>
 map <leader>t :NERDTreeToggle<CR>
+
 " fzf
 map <leader>f :Files<CR>
 
