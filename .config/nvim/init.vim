@@ -31,6 +31,7 @@ set list
 set listchars=tab:▸\ 
 set mouse=a
 set mousefocus
+set noruler
 set number
 set numberwidth=3
 set omnifunc=syntaxcomplete#Complete
@@ -84,6 +85,9 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'junegunn/fzf', { 'dir': '~/Code/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
+Plug 'junegunn/vim-peekaboo'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
@@ -106,6 +110,23 @@ let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 highlight ALEErrorSign cterm=bold ctermfg=1 ctermbg=7
+
+function! s:goyo_enter()
+  setl scrolloff=999
+  setl wrap
+  setl linebreak
+  AutoComplPopDisable
+endfunction
+
+function! s:goyo_leave()
+  setl scrolloff=5
+  setl wrap
+  setl nolinebreak
+  AutoComplPopEnable
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 
 " Mappings {{{
@@ -140,7 +161,7 @@ map <leader>t :NERDTreeToggle<CR>
 map <leader>f :Files<CR>
 
 " folding
-nnoremap <Space> za
+nnoremap <Space> zA
 
 " disable ex mode
 map Q <Nop>
@@ -161,7 +182,7 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 let g:go_list_type = "quickfix"
 let g:python2_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
-let g:markdown_fenced_languages = ['python', 'bash=sh', 'shell=sh', 'sh']
+let g:markdown_fenced_languages = ['python', 'bash=sh', 'shell=sh', 'sh', 'json']
 
 " autocomplete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -173,3 +194,5 @@ autocmd InsertLeave * redraw!
 
 autocmd BufWritePre *.json :%s/\s\+$//e " Remove eol whitespace
 " }}}
+
+runtime! local.vim
