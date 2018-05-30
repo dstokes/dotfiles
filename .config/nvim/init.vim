@@ -102,6 +102,7 @@ call plug#end()
 let g:NERDTreeIgnore = ['\.DS_Store$', '\.git$', '\.vagrant', '\.idea', 'node_modules']
 let g:NERDTreeShowHidden = 1
 let g:ale_sign_error = '•'
+let g:ale_sign_warning = '•'
 let g:gitgutter_sign_added = '┃'
 let g:gitgutter_sign_modified = '┃'
 let g:gitgutter_sign_removed = '┃'
@@ -110,6 +111,7 @@ let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 highlight ALEErrorSign cterm=bold ctermfg=1 ctermbg=7
+highlight ALEWarningSign cterm=bold ctermfg=2 ctermbg=7
 
 function! s:goyo_enter()
   setl scrolloff=999
