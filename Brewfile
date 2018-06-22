@@ -14,9 +14,11 @@ brew 'bash'
 brew 'coreutils'
 brew 'curl'
 brew 'dnsmasq'
+brew 'fortune'
 brew 'fzf'                 # fuzzy file finder
 brew 'git'
 brew 'gnupg2'
+brew 'gnu-tar'
 brew 'grip'                # GitHub style Markdown live previews
 brew 'htop-osx'
 brew 'hub'
