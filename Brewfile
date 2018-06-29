@@ -28,6 +28,7 @@ brew 'neofetch'            # system info
 brew 'neovim'
 brew 'netcat'
 brew 'nmap'
+brew 'nyancat'
 brew 'openssl'
 brew 'pinentry-mac'
 brew 'spark'               # sparklines
