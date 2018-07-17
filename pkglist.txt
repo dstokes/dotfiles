@@ -21,6 +21,7 @@ pacman
 polybar
 slack-desktop
 spotify
+stow
 strace
 sudo
 tar
