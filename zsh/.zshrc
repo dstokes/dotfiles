@@ -41,7 +41,8 @@ bindkey '^R' history-incremental-search-backward
 #RPROMPT='%{$fg_bold[blue]%}[%!][$(date +%T)] % %{$reset_color%}'
 ZLE_RPROMPT_INDENT=0
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/Users/dstokes/Code/go/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin
+export PATH="$PATH:$HOME/.local/bin/:$GOPATH/bin"
 
 if [[ -f ~/.gnupg/gpg-agent.env ]]; then
   source ~/.gnupg/gpg-agent.env
