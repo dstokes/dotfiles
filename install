@@ -1,0 +1,30 @@
+#! /bin/bash
+
+me=`basename $0`
+dir=`dirname $0`
+
+cd $dir
+
+# load all the submodules in
+git submodule update --init
+
+install() {
+  echo "==> Installing $1"
+  stow -t ~ "$1"
+}
+
+# install Mac configs
+if [[ "$(uname)" == "Darwin" ]]; then
+  for pkg in {brew,hammerspoon,iterm}; do
+    install "$pkg"
+  done
+fi
+
+for pkg in {ag,config,git,gnupg,input,kinesis-advantage2,local,tmux,zsh}; do
+  install "$pkg"
+done
+
+# Resume previous directory
+cd - > /dev/null
+
+echo "*** Done! ***"

@@ -28,7 +28,7 @@ unsetopt CORRECT
 unsetopt CORRECT_ALL
 DISABLE_AUTO_TITLE=true
 DISABLE_CORRECTION=true
-skip_global_compinit=1
+#skip_global_compinit=1
 
 # free up <C-S> for vim
 stty -ixon -ixoff
@@ -41,7 +41,7 @@ bindkey '^R' history-incremental-search-backward
 #RPROMPT='%{$fg_bold[blue]%}[%!][$(date +%T)] % %{$reset_color%}'
 ZLE_RPROMPT_INDENT=0
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/Users/dstokes/Code/go/bin
 
 if [[ -f ~/.gnupg/gpg-agent.env ]]; then
   source ~/.gnupg/gpg-agent.env
@@ -50,3 +50,10 @@ if [[ -f ~/.gnupg/gpg-agent.env ]]; then
 else
   export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
 fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

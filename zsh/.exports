@@ -4,7 +4,4 @@
 export EDITOR=vim
 export TERM='xterm-256color'
 
-# export bc config
-export BC_ENV_ARGS=~/.bcrc
-
 export PYTHONUNBUFFERED=1

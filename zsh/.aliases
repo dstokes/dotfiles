@@ -7,18 +7,20 @@ alias x="exit"
 alias ag="ag -i -S"
 
 alias dc=docker-compose
+function dict() {open dict://"$1"}
 alias g=git
 alias gti=git
-alias gpg1=/usr/local/bin/gpg
-alias gpg=/usr/local/bin/gpg2
 alias h=history
 alias jrnl=" jrnl"
+alias python=python3
+alias pip=pip3
 alias v=vim
 alias vi=vim
 alias vim="nvim -p"
 alias ls="ls -G"
 alias la="ls -alsG"
 alias sites='cd ~/Sites'
+alias ss=slack-status
 function pgrep() { ps aux | sed -e "1p" -e "/$@/!d" | grep -v "\!d$" }
 
 # vagrant aliases

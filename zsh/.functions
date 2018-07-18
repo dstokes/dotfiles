@@ -1,0 +1,44 @@
+# create a test directory
+testdir() {
+  mkdir -p ~/Code/test.$RANDOM && cd $_
+}
+
+# edit and repackage a debian file
+function editdeb() {
+  PACKAGE=$1
+  NEW_PACKAGE=${2:-$1}
+
+  if [[ -z "$PACKAGE" ]]; then
+    echo "Usage: $0 <deb> [new_deb]" >&2
+    return 1
+  fi
+
+  WORKDIR=/tmp/test.$RANDOM
+  mkdir -p $WORKDIR
+
+  # unpack and start a shell
+  dpkg-deb -R "$PACKAGE" $WORKDIR
+  pushd $WORKDIR &>/dev/null
+  /bin/bash
+
+  # repack
+  popd &>/dev/null
+  dpkg-deb -b $WORKDIR "$NEW_PACKAGE"
+}
+
+function localtime() {
+  dt=$(echo "$1" | sed 's/Z$/ +0000/')
+  date -jf ${2:-'%Y-%m-%dT%H:%M:%S %z'} $dt
+}
+
+function remind() {
+  set -x
+  MSG=$1
+  shift
+  echo "osascript -e 'display notification \"$MSG\" with title \"Reminder\"'" | at $@
+}
+
+function tz() {
+  ZONES=(America/Los_Angeles America/Chicago America/New_York)
+  for TZ in "${ZONES[@]}"; do TZ=$TZ date; done
+}
