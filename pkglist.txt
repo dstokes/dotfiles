@@ -1,12 +1,14 @@
 bc
 binutils
 chromium
+chromium-widevine
 conky
 coreutils
 cowsay
 curl
 dmenu
-fortune
+docker
+docker-compose
 fzf
 grep
 gzip
@@ -18,9 +20,6 @@ neofetch
 neovim
 net-tools
 pacman
-polybar
-slack-desktop
-spotify
 stow
 strace
 sudo
@@ -29,7 +28,6 @@ termite
 the_silver_searcher
 tig
 tmux
-ttf-nerd-fonts-hack-complete-git
 wget
 xterm
 zsh

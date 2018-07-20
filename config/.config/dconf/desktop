@@ -1,0 +1,5 @@
+[org/gnome/desktop/wm/keybindings]
+switch-applications=['<Primary>Tab']
+switch-applications-backward=['<Primary><Shift>Tab']
+switch-group=['<Primary>grave']
+switch-group-backward=['<Primary><Shift>grave']
