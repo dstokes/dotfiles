@@ -39,5 +39,6 @@ unzip
 wget
 which
 whois
+xclip
 yay
 zsh
