@@ -23,6 +23,7 @@ neofetch
 neovim
 net-tools
 openssh
+rxvt-unicode-cvs-patched-wideglyphs
 sed
 slack-desktop
 spotify
