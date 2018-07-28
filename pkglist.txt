@@ -1,8 +1,8 @@
+aws-cli
 bash
 binutils
 bzip2
-chromium
-chromium-widevine
+google-chrome
 coreutils
 curl
 dmenu
@@ -11,6 +11,7 @@ docker-compose
 file
 fzf
 git
+go
 grep
 gzip
 htop
@@ -18,11 +19,14 @@ i3-gaps
 i3status
 jq
 less
+mailspring
 make
 neofetch
 neovim
 net-tools
 openssh
+playerctl
+polybar
 rxvt-unicode-cvs-patched-wideglyphs
 sed
 slack-desktop
@@ -35,7 +39,7 @@ termite
 the_silver_searcher
 tig
 tmux
-ttf-nerd-fonts-hack-complete-git
+nerd-fonts-complete
 unzip
 wget
 which
