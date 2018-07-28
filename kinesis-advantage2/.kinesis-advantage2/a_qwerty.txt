@@ -1,0 +1,8 @@
+[F2]>[prev]
+[F3]>[play]
+[F4]>[next]
+[caps]>[lctrl]
+[pause]>[vol+]
+[scroll]>[vol-]
+[prtscr]>[mute]
+[delete]>[escape]
