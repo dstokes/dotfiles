@@ -2,4 +2,4 @@
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-xset r rate 200 25
+xset r rate 275 30
