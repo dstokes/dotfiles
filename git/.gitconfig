@@ -21,7 +21,7 @@
   untracked = cyan
 
 [core]
-  editor = vim
+  editor = nvim
   excludesfile = ~/.gitignore
   whitespace = tab-in-indent,tabwidth=2
   pager = "less -FXRS -x2"
