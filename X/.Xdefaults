@@ -49,7 +49,6 @@ URxvt.keysym.C-equal: resize-font:bigger
 
 *background: #fdf6e3
 *foreground: #586e75
-!!*fading: 40
 *fadeColor: #002b36
 *cursorColor: #586e75
 *pointerColorBackground: #586e75

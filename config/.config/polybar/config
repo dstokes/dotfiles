@@ -20,12 +20,8 @@
 [colors]
 background = #fdf6e3
 background-alt = #eee8d5
-; background = #222
-; background-alt = #444
-foreground = #003541
-foreground-alt = #002833
-; foreground = #dfdfdf
-; foreground-alt = #555
+foreground = #586e75
+foreground-alt = #586e75
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -92,7 +88,7 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-foreground = ${colors.foreground}
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor

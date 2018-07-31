@@ -16,7 +16,7 @@ set $mod Mod1
 font pango:monospace 9
 
 # thin borders
-hide_edge_borders both
+hide_edge_borders smart
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -174,9 +174,9 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Kalu"] floating enable
 
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 #smart_gaps on
-gaps inner 10
+gaps inner 6
 
 assign [class="Google-chrome"] 2
 assign [class="Slack"] 3
