@@ -3,6 +3,7 @@ bash
 binutils
 bzip2
 google-chrome
+compton
 coreutils
 curl
 dmenu
@@ -16,7 +17,7 @@ grep
 gzip
 htop
 i3-gaps
-i3status
+i3lock
 jq
 less
 mailspring
@@ -35,12 +36,14 @@ stow
 strace
 sudo
 tar
+tcpdump
 termite
 the_silver_searcher
 tig
 tmux
 nerd-fonts-complete
 unzip
+urxvt-resize-font-git
 wget
 which
 whois
