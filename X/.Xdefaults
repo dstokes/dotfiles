@@ -1,21 +1,16 @@
-!-------------------------------------------------------------------------------
+! ------------
 ! Xft settings
-!-------------------------------------------------------------------------------
-
+! ------------
 Xft.dpi:                    96
 Xft.antialias:              false
 Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
 
-!-------------------------------------------------------------------------------
+! --------------
 ! URxvt settings
-! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
-! More info at:
-! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
-!-------------------------------------------------------------------------------
-
-URxvt.intensityStyles: false
+! --------------
+URxvt.intensityStyles:      false
 URxvt.depth:                32
 URxvt.geometry:             90x30
 URxvt.transparent:          false
@@ -44,6 +39,11 @@ URxvt.cursorUnderline:      false
 
 ! Pointer
 URxvt.pointerBlank:         true
+
+! Extension
+URxvt.perl-ext-common: resize-font
+URxvt.keysym.C-0: resize-font:reset
+URxvt.keysym.C-equal: resize-font:bigger
 
 !!Source http://github.com/altercation/solarized
 
