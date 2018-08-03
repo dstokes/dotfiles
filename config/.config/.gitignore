@@ -1,8 +1,11 @@
 *
 !*/
-!i3/**
-!polybar/**
-!nvim/**
+!compoton.conf
 !dconf/**
+!dunst/**
+!greenclip.cfg
 !gtk-3.0/gtk.css
+!i3/**
+!nvim/**
+!polybar/**
 !.gitignore

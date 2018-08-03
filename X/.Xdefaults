@@ -20,6 +20,9 @@ URxvt.saveLines:            50
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 ! Fonts
 URxvt.allow_bold:           true
 URxvt*font: xft:Hack Nerd Font Mono:style=Regular:pixelsize=15:minspace=False, xft:DejaVu Sans Mono:size=15

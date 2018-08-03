@@ -9,9 +9,11 @@ curl
 dmenu
 docker
 docker-compose
+dunst
 file
 fzf
 git
+gnu-netcat
 go
 grep
 gzip
@@ -19,12 +21,13 @@ htop
 i3-gaps
 i3lock
 jq
+keybase-bin
 less
-mailspring
 make
+mailspring
+maim
 neofetch
 neovim
-gnu-netcat
 net-tools
 openssh
 playerctl

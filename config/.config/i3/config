@@ -39,7 +39,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu "rofi -i -dmenu"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu "rofi -i -dmenu -p open"
 
 # change focus
 bindsym $mod+j focus left
@@ -121,8 +121,13 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+bindsym $mod+Shift+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# screen shot
+bindsym --release $mod+Shift+Ctrl+4 exec --no-startup-id maim -m 6 -s | xclip -selection clipboard -t image/png
 
 # lock
 bindsym $mod+Shift+x exec i3lock --color 475263
@@ -155,9 +160,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
+#set $bg-color            #2f343f
+set $bg-color            #FF000000
+#set $inactive-bg-color   #2f343f
+set $inactive-bg-color   #FF000000
+set $text-color          #eee8d5
 set $inactive-text-color #676e7d
 set $urgent-bg-color     #e53935
 set $indicator-color     #a0a0a0
@@ -179,7 +186,7 @@ for_window [class="^.*"] border pixel 2
 gaps inner 6
 
 assign [class="Google-chrome"] 2
-assign [class="Slack"] 3
+assign [class="Keybase|Slack"] 3
 assign [class="Mailspring"] 4
 # Spotify doesn't set hints properly - https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace 5
@@ -215,5 +222,6 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id "compton -cC"
 exec --no-startup-id "feh --randomize --bg-scale /usr/share/backgrounds/antergos"
 exec --no-startup-id "sleep 5s && kalu"
+exec --no-startup-id "greenclip daemon"
 exec_always --no-startup-id "killall polybar; polybar -r default"
 exec --no-startup-id i3-msg 'exec /usr/bin/urxvt'

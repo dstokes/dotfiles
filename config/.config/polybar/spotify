@@ -1,7 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 main() {
   if ! pgrep -x spotify >/dev/null; then
+    echo ""; exit
+  fi
+  if [[ "$(playerctl status)" == "Paused" ]]; then
     echo ""; exit
   fi
   artist=$(playerctl metadata artist)
