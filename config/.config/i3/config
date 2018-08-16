@@ -130,7 +130,8 @@ bindsym $mod+Shift+v exec --no-startup-id rofi -modi "clipboard:greenclip print"
 bindsym --release $mod+Shift+Ctrl+4 exec --no-startup-id maim -m 6 -s | xclip -selection clipboard -t image/png
 
 # lock
-bindsym $mod+Shift+x exec i3lock --color 475263
+bindsym $mod+x exec i3lock --color 000000
+bindsym $mod+Shift+x exec i3lock --color 000000 && systemctl suspend
 
 focus_follows_mouse no
 
@@ -219,9 +220,10 @@ bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 
 # Autostart apps
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id "compton -cC"
+exec --no-startup-id "compton -C"
 exec --no-startup-id "feh --randomize --bg-scale /usr/share/backgrounds/antergos"
 exec --no-startup-id "sleep 5s && kalu"
 exec --no-startup-id "greenclip daemon"
+exec --no-startup-id "redshift"
 exec_always --no-startup-id "killall polybar; polybar -r default"
 exec --no-startup-id i3-msg 'exec /usr/bin/urxvt'

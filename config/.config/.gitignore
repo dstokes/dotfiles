@@ -1,6 +1,6 @@
 *
 !*/
-!compoton.conf
+!compton.conf
 !dconf/**
 !dunst/**
 !greenclip.cfg
@@ -8,4 +8,5 @@
 !i3/**
 !nvim/**
 !polybar/**
+!redshift/**
 !.gitignore

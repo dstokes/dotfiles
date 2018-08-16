@@ -36,7 +36,7 @@ margin-bottom = 5
 [bar/default]
 width = 100%
 height = 27
-radius = 6.0
+radius = 0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -44,9 +44,9 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-border-left-size = 6
-border-right-size = 6
-border-top-size = 10
+border-left-size = 0
+border-right-size = 0
+border-top-size = 0
 border-bottom-size = 0
 border-color = rgba(255, 255, 255, 1)
 
@@ -68,10 +68,10 @@ font-3 = Hack Nerd Font Mono:pixelsize=14;3
 
 modules-left = i3
 modules-center = spotify
-modules-right = alsa vpn cpu temperature date powermenu
+modules-right = alsa vpn cpu temperature weather date powermenu
 
-; tray-position = right
-; tray-padding = 2
+tray-position = right
+;tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -112,7 +112,7 @@ label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
-ws-icon-0 = 1;
+ws-icon-0 = 1;%{T2}%{T-}
 ws-icon-1 = 2;%{T2}%{T-}
 ws-icon-2 = 3;%{T2}%{T-}
 ws-icon-3 = 4;%{T2}%{T-}
@@ -128,6 +128,12 @@ exec-if = pgrep -x spotify
 exec = sh ~/.config/polybar/spotify
 format = %{T2}%{T-} <label>
 interval = 2
+
+[module/weather]
+type = custom/script
+exec = bash ~/.config/polybar/weather
+format = <label>
+interval = 30
 
 [module/vpn]
 type = custom/script
