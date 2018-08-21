@@ -150,8 +150,5 @@ exec --no-startup-id "compton -C"
 exec --no-startup-id "feh --randomize --bg-scale /usr/share/backgrounds/antergos"
 exec --no-startup-id "sleep 5s && kalu"
 exec --no-startup-id "greenclip daemon"
-exec --no-startup-id "redshift"
 exec_always --no-startup-id "killall polybar; polybar -r default"
 exec --no-startup-id i3-msg 'exec /usr/bin/urxvt'
-#exec --no-startup-id i3-msg 'exec /usr/bin/urxvt -name cava -e cava'
-#exec --no-startup-id i3-msg 'workspace 1; append_layout workspace-1.json'
