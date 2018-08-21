@@ -1,8 +1,10 @@
+autocutsel
 aws-cli
 bash
 binutils
 bzip2
 google-chrome
+cava
 compton
 coreutils
 curl
@@ -21,15 +23,19 @@ htop
 i3-gaps
 i3lock
 jq
+kalu
 keybase-bin
 less
+lsof
 make
 mailspring
 maim
+mpv
 neofetch
 neovim
 net-tools
 openssh
+peek
 playerctl
 polybar
 rxvt-unicode-cvs-patched-wideglyphs
@@ -46,6 +52,7 @@ the_silver_searcher
 tig
 tmux
 nerd-fonts-complete
+redshift
 rofi
 unzip
 urxvt-resize-font-git
@@ -54,4 +61,5 @@ which
 whois
 xclip
 yay
+youtube-dl
 zsh

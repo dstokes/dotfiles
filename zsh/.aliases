@@ -21,6 +21,7 @@ alias ls="ls -G"
 alias la="ls -alsG"
 alias sites='cd ~/Sites'
 alias ss=slack-status
+alias yy="mpv --really-quiet --autofit=30% --ytdl --ytdl-format='mp4[height<=?720]' -ytdl-raw-options=playlist-start=1"
 function pgrep() { ps aux | sed -e "1p" -e "/$@/!d" | grep -v "\!d$" }
 
 # vagrant aliases

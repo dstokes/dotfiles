@@ -68,7 +68,7 @@ font-3 = Hack Nerd Font Mono:pixelsize=14;3
 
 modules-left = i3
 modules-center = spotify
-modules-right = alsa vpn cpu temperature weather date powermenu
+modules-right = vpn alsa cpu temperature weather date powermenu
 
 tray-position = right
 ;tray-padding = 2
