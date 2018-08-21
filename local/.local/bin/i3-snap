@@ -1,0 +1,8 @@
+#!/bin/bash -x
+
+CURRENT_WINDOW=$(xdotool getactivewindow)
+BORDER_OFFSET=6
+
+read -r SCREEN_W SCREEN_H <<<$(xdpyinfo | awk '/dimensions/ {gsub(/x/, " ", $2); print $2}')
+read -r WINDOW_W WINDOW_H <<<$(xwininfo -id $CURRENT_WINDOW | awk '/Width|Height/ {printf "%s ", $2}')
+xdotool windowmove $CURRENT_WINDOW $(( SCREEN_W - WINDOW_W - BORDER_OFFSET )) $(( SCREEN_H - WINDOW_H - BORDER_OFFSET ))

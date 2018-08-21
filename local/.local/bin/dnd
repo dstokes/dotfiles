@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SIG=USR1
+if [[ -n "$1" ]]; then
+  SIG=USR2
+fi
+
+pkill -u "$(whoami)" -$SIG dunst

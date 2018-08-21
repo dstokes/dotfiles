@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#
+# i3 lock script
+#
+pkill -u "$USER" -USR1 dunst
+i3lock -en --color 000000
+pkill -u "$USER" -USR2 dunst
