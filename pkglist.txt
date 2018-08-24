@@ -23,7 +23,6 @@ htop
 i3-gaps
 i3lock
 jq
-kalu
 keybase-bin
 less
 lsof
@@ -54,6 +53,9 @@ tmux
 nerd-fonts-complete
 redshift
 rofi
+rofi-calc
+rofi-greenclip
+rsync
 unzip
 urxvt-resize-font-git
 wget

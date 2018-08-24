@@ -16,6 +16,7 @@ bindsym $mod+Return exec urxvt
 
 # bindings
 bindsym $mod+a focus parent
+bindsym $mod+c exec --no-startup-id i3-dmenu-desktop --dmenu "rofi -i -show calc -modi calc -no-show-match -no-sort"
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu "rofi -i -dmenu -p open"
 bindsym $mod+f fullscreen toggle
 bindsym $mod+h split h
@@ -37,7 +38,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+Shift+space focus mode_toggle
 # screenshot
 bindsym --release $mod+Shift+Ctrl+4 exec --no-startup-id maim -m 6 -s | xclip -selection clipboard -t image/png
-bindsym --release $mod+Shift+Ctrl+5 exec --no-startup-id maim -m 6 | xclip -selection clipboard -t image/png
+bindsym --release $mod+Shift+Ctrl+5 exec --no-startup-id maim -m 6 ~/Pictures/Screenshot_$(date +%Y%m%d_%H:%M:%S).png
 
 # multimedia
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
@@ -146,9 +147,8 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="^.*"] border pixel 2
 
 # autostart apps
-exec --no-startup-id "compton -C"
+exec_always --no-startup-id "compton -C"
 exec --no-startup-id "feh --randomize --bg-scale /usr/share/backgrounds/antergos"
-exec --no-startup-id "sleep 5s && kalu"
 exec --no-startup-id "greenclip daemon"
-exec_always --no-startup-id "killall polybar; polybar -r default"
+exec --no-startup-id "killall polybar; polybar -r default"
 exec --no-startup-id i3-msg 'exec /usr/bin/urxvt'
