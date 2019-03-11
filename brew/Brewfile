@@ -12,6 +12,7 @@ tap "homebrew/core"
 brew 'awscli'
 brew 'bash'
 brew 'coreutils'
+brew 'ctags'
 brew 'curl'
 brew 'dnsmasq'
 brew 'fortune'
