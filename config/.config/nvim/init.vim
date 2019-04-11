@@ -26,7 +26,7 @@ set wildmode=list:longest      " emulate shell auto-completion
 set background=light
 set colorcolumn=80
 set completeopt=longest,menuone
-set laststatus=0
+set laststatus=2
 set list
 set listchars=tab:▸\ 
 set mouse=a
@@ -37,6 +37,7 @@ set numberwidth=3
 set omnifunc=syntaxcomplete#Complete
 set splitbelow
 set splitright
+set statusline=\ %f
 set updatetime=300
 set visualbell
 " }}}
@@ -83,6 +84,7 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'junegunn/fzf', { 'dir': '~/Code/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
@@ -102,6 +104,7 @@ call plug#end()
 " Configuration
 let g:NERDTreeIgnore = ['\.DS_Store$', '\.git$', '\.vagrant', '\.idea', 'node_modules']
 let g:NERDTreeShowHidden = 1
+let g:ale_fix_on_save = 1
 let g:ale_sign_error = '•'
 let g:ale_sign_warning = '•'
 let g:gitgutter_sign_added = '┃'
