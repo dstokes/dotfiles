@@ -35,6 +35,7 @@ set noruler
 set number
 set numberwidth=3
 set omnifunc=syntaxcomplete#Complete
+set signcolumn=yes
 set splitbelow
 set splitright
 set statusline=\ %f
@@ -42,23 +43,14 @@ set updatetime=300
 set visualbell
 " }}}
 
-" Indentation {{{
+" Folding & Indentation {{{
 set expandtab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-" }}}
-
-" Folding {{{
 set foldlevel=20
 set foldmethod=syntax
 set nofoldenable
-" }}}
-
-" Color {{{
-colorscheme solarized
-highlight Search ctermfg=7 ctermbg=6
-let g:solarized_visibility = "low"
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 " }}}
 
 " Search {{{
@@ -79,61 +71,72 @@ if version >= 703
 endif
 " }}}
 
+" Color {{{
+colorscheme solarized
+let g:solarized_visibility = "low"
+highlight TrailingWhitespace ctermbg=red guibg=red
+highlight Search ctermfg=7 ctermbg=6
+match TrailingWhitespace /\s\+\%#\@<!$/
+" }}}
+
 " Plugins {{{
 call plug#begin()
+" general plugins
 Plug 'airblade/vim-gitgutter'
-Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'junegunn/fzf', { 'dir': '~/Code/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
 Plug 'junegunn/vim-peekaboo'
-Plug 'ludovicchabant/vim-gutentags', { 'for': ['go', 'java', 'python', 'ruby'] }
+Plug 'majutsushi/tagbar'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/AutoComplPop'
 Plug 'vimwiki/vimwiki'
-Plug 'w0rp/ale'
+
+" language plugins
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 call plug#end()
 
-" Configuration
+" plugin configuration
 let g:NERDTreeIgnore = ['\.DS_Store$', '\.git$', '\.vagrant', '\.idea', 'node_modules']
 let g:NERDTreeShowHidden = 1
-let g:ale_fix_on_save = 1
-let g:ale_sign_error = '•'
-let g:ale_sign_warning = '•'
 let g:gitgutter_sign_added = '┃'
 let g:gitgutter_sign_modified = '┃'
 let g:gitgutter_sign_removed = '┃'
-let g:gutentags_cache_dir = '~/.config/nvim/ctags'
 let g:surround_no_insert_mappings = 1 " unmap surround weirdness
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
-highlight ALEErrorSign cterm=bold ctermfg=1 ctermbg=7
-highlight ALEWarningSign cterm=bold ctermfg=2 ctermbg=7
-
-function! s:goyo_enter()
-  setl scrolloff=999
-  setl wrap
-  setl linebreak
-  AutoComplPopDisable
-endfunction
-
-function! s:goyo_leave()
-  setl scrolloff=5
-  setl wrap
-  setl nolinebreak
-  AutoComplPopEnable
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
 " }}}
 
 " Mappings {{{
@@ -166,12 +169,20 @@ nnoremap <C-p> :bprevious<CR>
 vmap <leader>c :TComment<CR>
 map <leader>t :NERDTreeToggle<CR>
 map <leader>f :Files<CR>
+map <leader>T :TagbarToggle<CR>
+nmap <silent> gd <Plug>(coc-definition)
 
 " folding
 nnoremap <Space> zA
 
 " disable ex mode
 map Q <Nop>
+" }}}
+
+" Auto Commands {{{
+autocmd BufWritePre *.go :call CocAction('format') " gofmt on save
+autocmd BufWritePre *.json :%s/\s\+$//e " Remove eol whitespace
+autocmd InsertLeave * redraw!
 " }}}
 
 " Miscellaneous {{{
@@ -183,23 +194,12 @@ if &term =~ '^screen'
   execute "set <xLeft>=\e[1;*D"
 endif
 
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
-let g:go_list_type = "quickfix"
 let g:python2_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
-let g:markdown_fenced_languages = ['python', 'bash=sh', 'shell=sh', 'sh', 'json']
-
-" autocomplete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-
-" highlight end-of-line whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * redraw!
-
-autocmd BufWritePre *.json :%s/\s\+$//e " Remove eol whitespace
 " }}}
 
-runtime! local.vim
+" Commands {{{
+command! Conf :tabedit $MYVIMRC
+" }}}
+
+runtime! local.vim "import local.vim

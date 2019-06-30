@@ -1,0 +1,32 @@
+{
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    },
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
+    },
+    "json": {
+      "command": "vscode-json-languageserver",
+      "filetypes": ["json"],
+      "ars": ["--stdio"]
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    },
+    "yaml": {
+      "command": "yaml-language-server",
+      "filetypes": ["yaml"],
+      "args": ["--stdio"]
+    }
+  },
+  "diagnostic.virtualText": true,
+  "coc.preferences.noselect": false
+}
