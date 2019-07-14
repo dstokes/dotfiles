@@ -5,21 +5,18 @@ filetype plugin on
 " General {{{
 set autoindent
 set autoread
-set backspace=indent,eol,start " Allow backspace in insert mode
+set backspace=indent,eol,start " allow backspace in insert mode
 set encoding=utf-8
-set hidden                     " Persist buffer changes without write
+set hidden                     " persist buffer changes without write
 set modeline
 set modelines=5
-set nobackup
+set nobackup                   " don't keep backup files
 set noerrorbells
 set nowrap
 set scrolloff=3
 set smartindent
-set synmaxcol=200              " Prevent UI from locking up on long lines
+set synmaxcol=200              " prevent UI from locking up on long lines
 set t_Co=256
-set wildignore+=*/node_modules/*
-set wildmenu                   " show all auto-complete file name options
-set wildmode=list:longest      " emulate shell auto-completion
 " }}}
 
 " UI {{{
@@ -27,7 +24,7 @@ set background=light
 set colorcolumn=80
 set completeopt=longest,menuone
 set laststatus=2
-set list
+set list                             " highlight whitespace
 set listchars=tab:▸\ 
 set mouse=a
 set mousefocus
@@ -55,9 +52,12 @@ set tabstop=2
 
 " Search {{{
 set hlsearch
-set ignorecase
 set incsearch
+set path+=**                     " search recursively with :find
 set smartcase
+set wildignore+=*/node_modules/*
+set wildmenu                     " show all auto-complete file name options
+set wildmode=list:longest        " emulate shell auto-completion
 " }}}
 
 " Files / Buffers {{{
@@ -74,30 +74,34 @@ endif
 " Color {{{
 colorscheme solarized
 let g:solarized_visibility = "low"
-highlight TrailingWhitespace ctermbg=red guibg=red
+highlight CocErrorSign ctermfg=1 ctermbg=7
+highlight CocErrorVirtualText ctermfg=9 guifg=#ff0000
+highlight CocHintSign ctermbg=7
+highlight CocHintVirtualText ctermfg=5
+highlight CocInfoSign ctermbg=7
+highlight CocInfoVirtualText ctermfg=5
+highlight CocWarningSign ctermbg=7
+highlight CocWarningVirtualText ctermfg=5
 highlight Search ctermfg=7 ctermbg=6
-match TrailingWhitespace /\s\+\%#\@<!$/
+highlight TrailingWhitespace ctermbg=red guibg=red
+match TrailingWhitespace /\s\+\%#\@<!$/ " highlight trailing whitespace
 " }}}
 
 " Plugins {{{
 call plug#begin()
-" general plugins
-Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'dir': '~/Code/fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
-Plug 'junegunn/vim-peekaboo'
-Plug 'majutsushi/tagbar'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-surround'
-Plug 'vimwiki/vimwiki'
-
-" language plugins
-Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+Plug 'airblade/vim-gitgutter'                                         " git diff sign symbols
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }                 " terraform support
+Plug 'junegunn/fzf', { 'dir': '~/Code/fzf', 'do': './install --all' } " fuzzy find
+Plug 'junegunn/fzf.vim'                                               " fuzzy find in vim
+Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }                 " easy and flexbile text alignment
+Plug 'junegunn/vim-peekaboo'                                          " visualize registers in a sidebar
+Plug 'neoclide/coc.nvim', {'branch': 'release'}                       " intellisense engine
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }                " file browser
+Plug 'tomtom/tcomment_vim'                                            " better comment manipulation
+Plug 'tpope/vim-fugitive'                                             " git functionality in vim
+Plug 'tpope/vim-rhubarb'                                              " vim-fugitive extension for Github
+Plug 'tpope/vim-surround'                                             " easily manipulate surrounds
+Plug 'vimwiki/vimwiki'                                                " wikis in vim
 call plug#end()
 
 " plugin configuration
@@ -109,34 +113,6 @@ let g:gitgutter_sign_removed = '┃'
 let g:surround_no_insert_mappings = 1 " unmap surround weirdness
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-
-let g:tagbar_type_go = {
-	\ 'ctagstype' : 'go',
-	\ 'kinds'     : [
-		\ 'p:package',
-		\ 'i:imports:1',
-		\ 'c:constants',
-		\ 'v:variables',
-		\ 't:types',
-		\ 'n:interfaces',
-		\ 'w:fields',
-		\ 'e:embedded',
-		\ 'm:methods',
-		\ 'r:constructor',
-		\ 'f:functions'
-	\ ],
-	\ 'sro' : '.',
-	\ 'kind2scope' : {
-		\ 't' : 'ctype',
-		\ 'n' : 'ntype'
-	\ },
-	\ 'scope2kind' : {
-		\ 'ctype' : 't',
-		\ 'ntype' : 'n'
-	\ },
-	\ 'ctagsbin'  : 'gotags',
-	\ 'ctagsargs' : '-sort -silent'
-\ }
 " }}}
 
 " Mappings {{{
@@ -169,8 +145,16 @@ nnoremap <C-p> :bprevious<CR>
 vmap <leader>c :TComment<CR>
 map <leader>t :NERDTreeToggle<CR>
 map <leader>f :Files<CR>
-map <leader>T :TagbarToggle<CR>
 nmap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " folding
 nnoremap <Space> zA
@@ -180,9 +164,9 @@ map Q <Nop>
 " }}}
 
 " Auto Commands {{{
-autocmd BufWritePre *.go :call CocAction('format') " gofmt on save
-autocmd BufWritePre *.json :%s/\s\+$//e " Remove eol whitespace
-autocmd InsertLeave * redraw!
+autocmd BufWritePre *.go,*.rb :call CocAction('format') " gofmt on save
+autocmd BufWritePre *.json :%s/\s\+$//e                 " remove eol whitespace
+autocmd InsertLeave * redraw!                           " render eol whitespace when leaving insert mode
 " }}}
 
 " Miscellaneous {{{
@@ -202,4 +186,4 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 command! Conf :tabedit $MYVIMRC
 " }}}
 
-runtime! local.vim "import local.vim
+runtime! local.vim " import untracked local config
