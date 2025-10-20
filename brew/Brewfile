@@ -1,13 +1,5 @@
-############################################
 # Brewfile
-# https://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew
-############################################
-# To use, simply run
-# > brew tap homebrew/bundle && brew bundle
-############################################
-
-tap "homebrew/bundle"
-tap "homebrew/core"
+# Use `brew bundle` to install
 
 brew 'awscli'
 brew 'bash'
@@ -41,7 +33,7 @@ brew 'tmux'
 brew 'tree'
 brew 'watch'
 brew 'wget'
+brew 'ykman'
 brew 'zsh'
 
-tap "homebrew/cask-fonts"
 cask "font-hack-nerd-font" # Hack font glyphs
