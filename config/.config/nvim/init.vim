@@ -16,11 +16,9 @@ set nowrap
 set scrolloff=3
 set smartindent
 set synmaxcol=200              " prevent UI from locking up on long lines
-set t_Co=256
 " }}}
 
 " UI {{{
-set background=light
 set colorcolumn=80
 set completeopt=longest,menuone
 set laststatus=2
@@ -70,10 +68,11 @@ if version >= 703
   set undoreload=10000
 endif
 " }}}
-
+"
 " Color {{{
+set notermguicolors
+set background=light
 colorscheme solarized
-let g:solarized_visibility = "low"
 highlight CocErrorSign ctermfg=1 ctermbg=7
 highlight CocErrorVirtualText ctermfg=9 guifg=#ff0000
 highlight CocHintSign ctermbg=7
