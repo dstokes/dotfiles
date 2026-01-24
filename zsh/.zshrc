@@ -43,6 +43,7 @@ ZLE_RPROMPT_INDENT=0
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin
 export PATH="$PATH:$HOME/.local/bin/:$GOPATH/bin"
+export PATH="/opt/homebrew/bin:opt/homebrew/sbin:$PATH"
 
 if [[ -f ~/.gnupg/gpg-agent.env ]]; then
   source ~/.gnupg/gpg-agent.env
@@ -58,3 +59,11 @@ fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+. "$HOME/.cargo/env"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

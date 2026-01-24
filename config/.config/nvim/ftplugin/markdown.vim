@@ -1,3 +1,4 @@
+setl wrap
 setl conceallevel=2
 setl suffixesadd=.md       " open local links without suffixes
 setl spell spelllang=en_us " turn on spell checking
