@@ -1,4 +1,3 @@
-# Brewfile
 # Use `brew bundle` to install
 
 brew 'awscli'
@@ -8,24 +7,27 @@ brew 'ctags'
 brew 'curl'
 brew 'fortune'
 brew 'fzf'                 # fuzzy file finder
+brew 'gawk'
 brew 'git'
-brew 'gnupg2'
 brew 'gnu-tar'
+brew 'gnupg2'
 brew 'go'
 brew 'grip'                # GitHub style Markdown live previews
-brew 'htop-osx'
+brew 'htop'
 brew 'hub'
 brew 'jq'
 brew 'lolcat'
 brew 'lua'
-brew 'neofetch'            # system info
+brew 'mas'
 brew 'mtr'
+brew 'neofetch'            # system info
 brew 'neovim'
 brew 'netcat'
 brew 'nmap'
+brew 'nvm'
 brew 'nyancat'
-brew 'openssl'
 brew 'pinentry-mac'
+brew 'stow'
 brew 'tflint'
 brew 'the_silver_searcher'
 brew 'tig'
@@ -36,4 +38,16 @@ brew 'wget'
 brew 'ykman'
 brew 'zsh'
 
-cask "font-hack-nerd-font" # Hack font glyphs
+cask 'firefox'
+cask 'font-hack-nerd-font' # Hack font glyphs
+cask 'iterm2'
+cask 'raycast'
+cask 'reader'              # Readwise Reader
+cask 'rectangle'
+cask 'spotify'
+
+mas 'Bear', id: 1091189122
+mas 'Cardhop', id: 1290358394
+mas 'Fantastical', id: 975937182
+mas 'Slack', id: 803453959
+mas 'Todoist', id: 585829637

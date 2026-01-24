@@ -27,4 +27,7 @@ done
 # Resume previous directory
 cd - > /dev/null
 
+echo "Installing packages"
+brew bundle
+
 echo "*** Done! ***"
