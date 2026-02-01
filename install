@@ -15,7 +15,7 @@ install() {
 
 # install Mac configs
 if [[ "$(uname)" == "Darwin" ]]; then
-  for pkg in {brew,hammerspoon,iterm}; do
+  for pkg in {brew,hammerspoon,iterm,claude}; do
     install "$pkg"
   done
 fi

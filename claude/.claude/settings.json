@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(go *)",
+      "Bash(npm *)",
+      "Bash(python3 *)",
+      "Bash(make *)",
+      "Bash(gh *)",
+      "Bash(sqlite3 -readonly *)",
+      "Read",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch"
+    ]
+  }
+}
