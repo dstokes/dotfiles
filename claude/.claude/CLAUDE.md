@@ -17,6 +17,8 @@
 - Version control: Git with conventional commits
 - Package managers: Homebrew (macOS), npm/pnpm (Node)
 - Editor: Neovim
+- Task management: Todoist (tasks, projects, deadlines)
+- Notes & documentation: Bear (notes, project tracking, research)
 
 ## Workflow Preferences
 - Break complex tasks into smaller, verifiable steps
