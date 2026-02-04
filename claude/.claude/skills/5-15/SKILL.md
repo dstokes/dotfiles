@@ -38,6 +38,16 @@ sqlite3 -readonly "$HOME/Library/Group Containers/9K33E3U3T4.net.shinyfrog.bear/
   "SELECT ZTEXT FROM ZSFNOTE WHERE ZTITLE = 'Week 2026-05' AND ZTRASHED = 0 AND ZARCHIVED = 0 LIMIT 1"
 ```
 
+### Follow Linked Notes
+
+After fetching daily and weekly notes, scan for `[[Note Title]]` links. Fetch linked notes that appear relevant to the report (e.g., project updates, meeting notes, decision logs). Skip links to templates or unrelated content.
+
+```bash
+# Fetch a linked note by title
+sqlite3 -readonly "$HOME/Library/Group Containers/9K33E3U3T4.net.shinyfrog.bear/Application Data/database.sqlite" \
+  "SELECT ZTEXT FROM ZSFNOTE WHERE ZTITLE = 'Linked Note Title' AND ZTRASHED = 0 AND ZARCHIVED = 0 LIMIT 1"
+```
+
 ### Fetch Todoist Completed Tasks
 
 Use the Todoist MCP tools to retrieve tasks completed during the current week.
