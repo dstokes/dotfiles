@@ -71,6 +71,16 @@ open "bear://x-callback-url/add-text?title=NOTE_TITLE&text=URL_ENCODED_TEXT&mode
 open "bear://x-callback-url/add-text?title=NOTE_TITLE&text=URL_ENCODED_TEXT&mode=prepend"
 ```
 
+### Add Text After a Header
+
+Use the `header` parameter to insert text after a specific header in the note:
+
+```bash
+open "bear://x-callback-url/add-text?title=NOTE_TITLE&text=URL_ENCODED_TEXT&mode=append&header=HEADER_TEXT"
+```
+
+The text will be appended after the specified header. The header value should match the header text exactly (URL encoded).
+
 ### Parameters
 
 | Param | Description |
@@ -78,7 +88,10 @@ open "bear://x-callback-url/add-text?title=NOTE_TITLE&text=URL_ENCODED_TEXT&mode
 | `title` | Target note title |
 | `id` | Target note ID (alternative to title) |
 | `text` | Content to add (URL encoded) |
-| `mode` | `append` (end) or `prepend` (beginning) |
+| `mode` | `prepend`, `append`, `replace`, or `replace_all` |
+| `header` | Insert text after this header (URL encoded) |
+| `new_line` | If `yes` and mode is `append`, forces text on a new line |
+| `timestamp` | If `yes`, prepends current date/time to the text |
 
 ### URL Encoding
 
@@ -144,6 +157,26 @@ sqlite3 -readonly "$HOME/Library/Group Containers/9K33E3U3T4.net.shinyfrog.bear/
 Daily notes use the format `YYYY-mm-dd` (e.g., `2026-02-01`).
 
 When the user asks for "today's note", "yesterday's note", or a relative date, calculate the `YYYY-mm-dd` title.
+
+## Weekly Notes
+
+Weekly notes use the format `Week YYYY-ww` (e.g., `Week 2026-05`).
+
+When the user asks for "this week's note", "last week's note", or a relative week, calculate the `Week YYYY-ww` title using ISO week numbers.
+
+## Callouts
+
+Bear supports callouts using the syntax `> [!TYPE]`. These indicate important, highlighted content.
+
+| Callout Type | Meaning |
+|--------------|---------|
+| `[!IMPORTANT]` | Critical information, priorities |
+| `[!WARNING]` | Risk or concern |
+| `[!CAUTION]` | Proceed carefully |
+| `[!TIP]` | Helpful insight or suggestion |
+| `[!NOTE]` | General note or context |
+
+When analyzing notes, treat callout content as high-signal—these are intentionally highlighted by the user.
 
 ## Usage
 

@@ -8,6 +8,8 @@
       "Bash(make *)",
       "Bash(gh *)",
       "Bash(sqlite3 -readonly *)",
+      "mcp__linear__*",
+      "mcp__todoist__*",
       "Read",
       "Glob",
       "Grep",
