@@ -178,6 +178,12 @@ Bear supports callouts using the syntax `> [!TYPE]`. These indicate important, h
 
 When analyzing notes, treat callout content as high-signal—these are intentionally highlighted by the user.
 
+## Highlights
+
+Bear supports highlights using the syntax `==highlighted text==`. These indicate content the user has explicitly marked as important.
+
+When analyzing notes, treat highlighted content as high-signal alongside callouts.
+
 ## Usage
 
 User request: $ARGUMENTS
