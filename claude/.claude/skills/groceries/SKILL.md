@@ -51,22 +51,22 @@ Combine ingredients across all recipes and standalone items:
 
 ## Phase 4: Categorize by Section
 
-Assign each ingredient to the appropriate section in the project. Always fetch existing sections from the project first and use them.
+Assign each ingredient to the appropriate section in the project using the IDs below.
 
-The project's current sections (these may change over time — always fetch dynamically):
+The project's current sections with their Todoist IDs:
 
-| Section | Examples |
-|---------|----------|
-| 🥬 Fruits • Vegetables | Fruits, vegetables, fresh herbs, garlic, onions, potatoes |
-| 🍞 Bread • Bakery | Bread, tortillas, buns, rolls |
-| 🧀 Deli • Dairy | Milk, cheese, butter, yogurt, eggs, deli meats, chicken, beef, pork, fish, seafood |
-| 🍝 Pasta • Rice • Cereal | Pasta, rice, cereal, oats, grains, noodles |
-| 🌭 Sauces • Condiments | Ketchup, soy sauce, hot sauce, salad dressing, vinegar, mustard |
-| 🥨 Chips • Crackers • Nuts | Snack items, chips, crackers, nuts, trail mix |
-| 🌮 World Foods • Beans | Canned beans, tortillas, salsa, curry paste, coconut milk, international ingredients |
-| 🍪 Baking • Spices | Flour, sugar, baking powder, vanilla, spices, cocoa |
-| ❄️ Frozen Foods | Frozen vegetables, ice cream, frozen meals |
-| 🚚 Costco | Items the user specifically says to get at Costco |
+| Section | ID | Examples |
+|---------|----|----------|
+| 🥬 Fruits • Vegetables | `64RP63xMPCwQG36r` | Fruits, vegetables, fresh herbs, garlic, onions, potatoes |
+| 🍞 Bread • Bakery | `64RMhgVP3xrMxC3r` | Bread, tortillas, buns, rolls |
+| 🧀 Deli • Dairy | `64RPWQJqmMP8m57J` | Milk, cheese, butter, yogurt, eggs, deli meats, chicken, beef, pork, fish, seafood |
+| 🍝 Pasta • Rice • Cereal | `64RPXJ6382P6hjjr` | Pasta, rice, cereal, oats, grains, noodles |
+| 🌭 Sauces • Condiments | `64RP5wMVgj57HM6J` | Ketchup, soy sauce, hot sauce, salad dressing, vinegar, mustard |
+| 🥨 Chips • Crackers • Nuts | `64RP9FfVQ6RHWCMr` | Snack items, chips, crackers, nuts, trail mix |
+| 🌮 World Foods • Beans | `64RPPvGvXVf7MqRJ` | Canned beans, tortillas, salsa, curry paste, coconut milk, international ingredients |
+| 🍪 Baking • Spices | `64RPWhXFqJW5Q36J` | Flour, sugar, baking powder, vanilla, spices, cocoa |
+| ❄️ Frozen Foods | `64RPGJPqRp2X5qWr` | Frozen vegetables, ice cream, frozen meals |
+| 🚚 Costco | `6X73c4q8v2Jhv2Qr` | Items the user specifically says to get at Costco |
 
 **Important**: The "🚚 Costco" section is for items explicitly requested from Costco. Do not auto-assign items there unless the user indicates it.
 
@@ -95,11 +95,9 @@ Use good judgment: if a recipe calls for "2 tablespoons olive oil," that's worth
 
 The "Groceries 🛒" project ID is `6Crfg47frcF8xX2r`. Use this directly — do NOT create a new project.
 
-### Load Sections
+### Section Assignment
 
-1. Fetch all sections with `find-sections` for the project
-2. Map section names to IDs for task assignment
-3. If an ingredient doesn't match any section, omit the section (add to project root)
+Use the section IDs from the table in Phase 4 directly — no need to fetch sections. If an ingredient doesn't match any section, omit the section (add to project root).
 
 ### Create Tasks
 
