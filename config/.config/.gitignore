@@ -1,13 +1,21 @@
+# Whitelist: ignore everything, then selectively allow
+# specific config directories and files to be tracked.
 *
+
 !*/
+!.gitignore
+
+# directories
 !cava/**
-!compton.conf
 !dconf/**
 !dunst/**
-!greenclip.cfg
-!gtk-3.0/gtk.css
 !i3/**
 !nvim/**
 !polybar/**
 !redshift/**
-!.gitignore
+
+# files
+!compton.conf
+!greenclip.cfg
+!gtk-3.0/gtk.css
+!starship.toml

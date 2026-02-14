@@ -1,20 +1,39 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git *)",
-      "Bash(go *)",
-      "Bash(npm *)",
-      "Bash(python3 *)",
-      "Bash(make *)",
-      "Bash(gh *)",
-      "Bash(sqlite3 -readonly *)",
-      "mcp__linear__*",
-      "mcp__todoist__*",
       "Read",
       "Glob",
       "Grep",
-      "WebSearch",
-      "WebFetch"
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(git tag:*)",
+      "Bash(git remote -v:*)",
+      "Bash(git blame:*)",
+      "Bash(git shortlog:*)",
+      "Bash(git describe:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git ls-files:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(git cat-file:*)",
+      "Bash(git config --get:*)",
+      "Bash(git config --list:*)",
+      "Bash(go test:*)",
+      "Bash(go build:*)",
+      "Bash(go vet:*)",
+      "Bash(go mod tidy:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run lint:*)",
+      "Bash(sqlite3 -readonly *)",
+      "mcp__linear__*",
+      "mcp__todoist__*"
     ]
+  },
+  "model": "opus",
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
   }
 }

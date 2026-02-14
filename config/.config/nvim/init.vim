@@ -83,7 +83,7 @@ highlight CocWarningSign ctermbg=7
 highlight CocWarningVirtualText ctermfg=5
 highlight Search ctermfg=7 ctermbg=6
 highlight TrailingWhitespace ctermbg=red guibg=red
-highlight CoCFloating ctermfg=12 ctermbg=0 guibg=Magenta
+highlight CoCFloating ctermfg=12 ctermbg=7 guibg=#eee8d5
 match TrailingWhitespace /\s\+\%#\@<!$/ " highlight trailing whitespace
 " }}}
 

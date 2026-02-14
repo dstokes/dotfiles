@@ -1,55 +1,72 @@
 # Use `brew bundle` to install
 
-brew 'awscli'
+# shell
 brew 'bash'
-brew 'coreutils'
-brew 'ctags'
-brew 'curl'
-brew 'fortune'
-brew 'fzf'                 # fuzzy file finder
-brew 'gawk'
-brew 'gh'
-brew 'git'
-brew 'gnu-tar'
-brew 'gnupg2'
-brew 'go'
-brew 'grip'                # GitHub style Markdown live previews
-brew 'htop'
-brew 'hub'
-brew 'jq'
-brew 'lolcat'
-brew 'lua'
-brew 'mas'
-brew 'mtr'
-brew 'neofetch'            # system info
 brew 'neovim'
-brew 'netcat'
-brew 'nmap'
-brew 'nvm'
-brew 'nyancat'
-brew 'pinentry-mac'
 brew 'starship'             # cross-shell prompt
 brew 'stow'
-brew 'tflint'
-brew 'the_silver_searcher'
-brew 'tig'
 brew 'tmux'
-brew 'tree'
-brew 'watch'
-brew 'wget'
-brew 'ykman'
 brew 'zsh'
 brew 'zsh-history-substring-search'
 
+# utilities
+brew 'coreutils'
+brew 'ctags'
+brew 'curl'
+brew 'fzf'                  # fuzzy file finder
+brew 'gawk'
+brew 'gnu-tar'
+brew 'jq'
+brew 'the_silver_searcher'
+brew 'tree'
+brew 'watch'
+brew 'wget'
+
+# git
+brew 'gh'
+brew 'git'
+brew 'grip'                 # GitHub style Markdown live previews
+brew 'hub'
+brew 'tig'
+
+# languages
+brew 'go'
+brew 'lua'
+brew 'nvm'
+
+# infrastructure
+brew 'awscli'
+brew 'tflint'
+
+# networking
+brew 'gnupg2'
+brew 'mtr'
+brew 'netcat'
+brew 'nmap'
+brew 'pinentry-mac'
+brew 'ykman'
+
+# monitoring
+brew 'htop'
+brew 'mas'
+brew 'neofetch'             # system info
+
+# fun
+brew 'fortune'
+brew 'lolcat'
+brew 'nyancat'
+
+# casks
 cask '1password'
 cask 'firefox'
-cask 'font-hack-nerd-font' # Hack font glyphs
+cask 'font-hack-nerd-font'  # Hack font glyphs
 cask 'iterm2'
 cask 'raycast'
-cask 'reader'              # Readwise Reader
+cask 'reader'               # Readwise Reader
 cask 'rectangle'
 cask 'spotify'
 
+# apps
 mas 'Bear', id: 1091189122
 mas 'Cardhop', id: 1290358394
 mas 'Fantastical', id: 975937182
