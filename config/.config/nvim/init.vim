@@ -39,7 +39,7 @@ set visualbell
 " }}}
 
 " Folding & Indentation {{{
-set expandtab
+"set expandtab
 set foldlevel=20
 set foldmethod=syntax
 set nofoldenable
@@ -90,7 +90,9 @@ match TrailingWhitespace /\s\+\%#\@<!$/ " highlight trailing whitespace
 " Plugins {{{
 call plug#begin()
 Plug 'airblade/vim-gitgutter'                                         " git diff sign symbols
+Plug 'coder/claudecode.nvim', { 'branch': 'main' }                    " claude code integration
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }                 " terraform support
+Plug 'folke/snacks.nvim', { 'branch': 'main' }                        " utility library
 Plug 'junegunn/fzf', { 'dir': '~/Code/fzf', 'do': './install --all' } " fuzzy find
 Plug 'junegunn/fzf.vim'                                               " fuzzy find in vim
 Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }                 " easy and flexbile text alignment
@@ -113,6 +115,7 @@ let g:gitgutter_sign_removed = '┃'
 let g:surround_no_insert_mappings = 1 " unmap surround weirdness
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+lua require("claudecode").setup()
 " }}}
 
 " Mappings {{{
@@ -131,6 +134,9 @@ nnoremap ya ggVG"*y
 vmap < <gv
 vmap > >gv
 
+" exit terminal mode with double escape
+tnoremap <C-\> <C-\><C-n>
+
 " easy window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -145,6 +151,8 @@ nnoremap <C-p> :bprevious<CR>
 vmap <leader>c :TComment<CR>
 map <leader>t :NERDTreeToggle<CR>
 map <leader>f :Files<CR>
+map <leader>ac :ClaudeCode<CR>
+vmap <leader>as :ClaudeCodeSend<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 

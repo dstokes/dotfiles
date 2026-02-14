@@ -13,7 +13,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vi-mode history-substring-search gpg-agent)
+plugins=(git vi-mode history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,13 +45,13 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/loc
 export PATH="$PATH:$HOME/.local/bin/:$GOPATH/bin"
 export PATH="/opt/homebrew/bin:opt/homebrew/sbin:$PATH"
 
-if [[ -f ~/.gnupg/gpg-agent.env ]]; then
-  source ~/.gnupg/gpg-agent.env
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
-else
-  export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
-fi
+# if [[ -f ~/.gnupg/gpg-agent.env ]]; then
+#   source ~/.gnupg/gpg-agent.env
+#   export GPG_AGENT_INFO
+#   export SSH_AUTH_SOCK
+# else
+#   export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+# fi
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -61,7 +61,7 @@ fi
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
 
 
 export NVM_DIR="$HOME/.nvm"

@@ -8,6 +8,7 @@ brew 'curl'
 brew 'fortune'
 brew 'fzf'                 # fuzzy file finder
 brew 'gawk'
+brew 'gh'
 brew 'git'
 brew 'gnu-tar'
 brew 'gnupg2'

@@ -24,3 +24,8 @@
 - Break complex tasks into smaller, verifiable steps
 - Verify changes work before moving on
 - Commit logical units of work separately
+
+## Git Branch Naming
+- Template: `dstokes/<ticket_id>-<change_description>`
+- `<ticket_id>` is optional (omit the dash when there is no ticket)
+- Examples: `dstokes/JIRA-123-add-auth-middleware`, `dstokes/fix-flaky-test`
