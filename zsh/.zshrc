@@ -1,5 +1,10 @@
-# Completion system (replaces oh-my-zsh)
-autoload -Uz compinit && compinit
+# Completion system - only full check once per day, cached otherwise
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 
 # Vi mode
 bindkey -v
