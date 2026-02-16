@@ -36,7 +36,7 @@ bindkey '^R' history-incremental-search-backward
 ZLE_RPROMPT_INDENT=0
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin
-export PATH="$PATH:$HOME/.local/bin/:$GOPATH/bin"
+export PATH="$PATH:$HOME/.local/bin/:$GOPATH/bin:$HOME/.cargo/bin"
 export PATH="/opt/homebrew/bin:opt/homebrew/sbin:$PATH"
 
 # tabtab source for serverless package
@@ -56,8 +56,5 @@ nvm() {
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
   nvm "$@"
 }
-node() { nvm --version > /dev/null 2>&1; node "$@"; }
-npm() { nvm --version > /dev/null 2>&1; npm "$@"; }
-npx() { nvm --version > /dev/null 2>&1; npx "$@"; }
 
 eval "$(starship init zsh)"
