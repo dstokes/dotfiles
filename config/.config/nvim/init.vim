@@ -19,7 +19,7 @@ set synmaxcol=200              " prevent UI from locking up on long lines
 " }}}
 
 " UI {{{
-set colorcolumn=80
+"set colorcolumn=80
 set completeopt=longest,menuone
 set laststatus=2
 set list                             " highlight whitespace
@@ -81,9 +81,11 @@ highlight CocInfoSign ctermbg=7
 highlight CocInfoVirtualText ctermfg=5
 highlight CocWarningSign ctermbg=7
 highlight CocWarningVirtualText ctermfg=5
-highlight Search ctermfg=7 ctermbg=6
+highlight Search ctermfg=223 ctermbg=6
 highlight TrailingWhitespace ctermbg=red guibg=red
 highlight CoCFloating ctermfg=12 ctermbg=7 guibg=#eee8d5
+highlight LineNr ctermbg=NONE
+highlight Folded ctermbg=NONE
 match TrailingWhitespace /\s\+\%#\@<!$/ " highlight trailing whitespace
 " }}}
 
@@ -175,6 +177,7 @@ map Q <Nop>
 autocmd BufWritePre *.go,*.rb :call CocAction('format') " gofmt on save
 autocmd BufWritePre *.json :%s/\s\+$//e                 " remove eol whitespace
 autocmd InsertLeave * redraw!                           " render eol whitespace when leaving insert mode
+autocmd FocusGained,BufEnter,CursorHold * checktime     " auto-reload changed files
 " }}}
 
 " Miscellaneous {{{

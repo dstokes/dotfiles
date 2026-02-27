@@ -9,6 +9,7 @@
 !cava/**
 !dconf/**
 !dunst/**
+!ghostty/**
 !i3/**
 !nvim/**
 !polybar/**

@@ -1,6 +1,7 @@
 # Starship prompt — dstokes theme
 
 format = "$directory$git_branch$git_status$character"
+right_format = "$cmd_duration"
 
 [line_break]
 disabled = true
@@ -37,4 +38,6 @@ disabled = true
 [golang]
 disabled = true
 [cmd_duration]
-disabled = true
+min_time = 2_000
+format = "[$duration]($style)"
+style = "yellow bold"

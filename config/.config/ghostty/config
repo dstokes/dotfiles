@@ -1,0 +1,5 @@
+theme = iTerm2 Solarized Light
+font-family = Hack Nerd Font Mono
+font-size = 18
+
+shell-integration = zsh

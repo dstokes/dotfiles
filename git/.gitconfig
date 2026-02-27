@@ -77,3 +77,5 @@
   browser = open
 [ghi]
 	token = !security find-internet-password -a dstokes -s github.com -l 'ghi token' -w
+[url "git@github.com:"]
+	insteadOf = https://github.com/
