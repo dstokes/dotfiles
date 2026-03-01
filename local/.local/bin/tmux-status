@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ICON_MUSIC=ﱘ
+ICON_MUSIC=♪
 
 # date string
 STATUS=""
