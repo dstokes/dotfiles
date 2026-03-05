@@ -46,8 +46,6 @@ export PATH="/opt/homebrew/bin:opt/homebrew/sbin:$PATH"
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(fnm env --use-on-cd --shell zsh)"

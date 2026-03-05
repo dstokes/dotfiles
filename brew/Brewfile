@@ -10,6 +10,7 @@ brew 'zsh'
 brew 'zsh-history-substring-search'
 
 # utilities
+brew 'bat'
 brew 'coreutils'
 brew 'ctags'
 brew 'curl'
@@ -33,7 +34,7 @@ brew 'tig'
 # languages
 brew 'go'
 brew 'lua'
-brew 'nvm'
+brew 'fnm'
 
 # infrastructure
 brew 'awscli'

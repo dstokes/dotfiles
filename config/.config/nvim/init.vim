@@ -91,12 +91,12 @@ match TrailingWhitespace /\s\+\%#\@<!$/ " highlight trailing whitespace
 
 " Plugins {{{
 call plug#begin()
-Plug 'airblade/vim-gitgutter'                                         " git diff sign symbols
+Plug 'airblade/vim-gitgutter', { 'branch': 'main' }
 Plug 'coder/claudecode.nvim', { 'branch': 'main' }                    " claude code integration
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }                 " terraform support
 Plug 'folke/snacks.nvim', { 'branch': 'main' }                        " utility library
-Plug 'junegunn/fzf', { 'dir': '~/Code/fzf', 'do': './install --all' } " fuzzy find
-Plug 'junegunn/fzf.vim'                                               " fuzzy find in vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }                 " easy and flexbile text alignment
 Plug 'junegunn/vim-peekaboo'                                          " visualize registers in a sidebar
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                       " intellisense engine
