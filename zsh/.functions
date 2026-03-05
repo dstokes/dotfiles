@@ -38,6 +38,34 @@ function remind() {
   echo "osascript -e 'display notification \"$MSG\" with title \"Reminder\"'" | at $@
 }
 
+fuction sap () {
+  local query="${*}"
+  local profiles
+  profiles=$(grep '^\[profile ' "$HOME/.aws/config" | sed 's/^\[profile //;s/\]$//')
+
+  if [[ -z "$profiles" ]]; then
+    echo "Error: no AWS profiles found" >&2
+    return 1
+  fi
+
+  local selected
+  selected=$(echo "$profiles" | fzf \
+    --query="$query" \
+    --select-1 \
+    --exit-0 \
+    --prompt="AWS profile > " \
+    --height=~10 \
+    --layout=reverse \
+    --border=rounded)
+
+  [[ -z "$selected" ]] && return 1
+
+  aws sso login --profile "$selected" || return 1
+  export AWS_PROFILE="$selected"
+  echo "🎉 Switched to $AWS_PROFILE"
+
+}
+
 function tz() {
   ZONES=(America/Los_Angeles America/Chicago America/New_York)
   for TZ in "${ZONES[@]}"; do TZ=$TZ date; done
